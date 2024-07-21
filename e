@@ -979,7 +979,7 @@ local function KUUPKPY_fake_script() -- Newfluxsos.LocalScript
 	status.Position = UDim2.new(0, 0, 0.893442631, 0)
 	status.Size = UDim2.new(1, 0, 0.0355480109, 0)
 	status.Font = Enum.Font.SourceSansItalic
-	status.Text = "Thanks for using my scripts / Blitz in here"
+	status.Text = "Thanks for using my scripts / anya in here"
 	status.TextColor3 = Color3.fromRGB(255, 255, 255)
 	status.TextScaled = true
 	status.TextSize = 14.000
@@ -988,11 +988,11 @@ local function KUUPKPY_fake_script() -- Newfluxsos.LocalScript
 	status.TextWrapped = true
 	
 	repeat wait() until game:GetService("Players").LocalPlayer
-	status.Text = "Blitz on top"
+	status.Text = "anya on top"
 	wait(3)
-	status.Text = "Thanks for using my scripts / Blitz in here"
+	status.Text = "Thanks for using my scripts / anya in here"
 	wait(2)
-	status.Text = "haha fluxus sus remake version its beta baby :)"
+	status.Text = "haha flux sus remake version its beta baby :)"
 	if not game:IsLoaded() then
 		game.Loaded:wait()
 	end
