@@ -2,7 +2,7 @@
 -- Version: 3.2
 
 -- Instances:
-print("fluxus da best")
+
 local Newfluxsos = Instance.new("ScreenGui")
 local main = Instance.new("Frame")
 local left = Instance.new("Frame")
@@ -100,7 +100,6 @@ local UICorner_25 = Instance.new("UICorner")
 Newfluxsos.Name = "Newfluxsos"
 Newfluxsos.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
 Newfluxsos.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
-Newfluxsos.ResetOnSpawn = false
 
 main.Name = "main"
 main.Parent = Newfluxsos
@@ -188,7 +187,7 @@ UITextSizeConstraint_3.MaxTextSize = 25
 
 Loadeditor.Name = "Loadeditor"
 Loadeditor.Parent = executebutton
-Loadeditor.BackgroundColor3 = Color3.fromRGB(102, 60, 232)
+Loadeditor.BackgroundColor3 = Color3.fromRGB(71, 69, 73)
 Loadeditor.BorderColor3 = Color3.fromRGB(0, 0, 0)
 Loadeditor.BorderSizePixel = 0
 Loadeditor.Position = UDim2.new(0.0570175648, 0, 0.593406618, 0)
@@ -244,13 +243,13 @@ UITextSizeConstraint_6.MaxTextSize = 25
 
 Clear.Name = "Clear"
 Clear.Parent = executebutton
-Clear.BackgroundColor3 = Color3.fromRGB(102, 60, 232)
+Clear.BackgroundColor3 = Color3.fromRGB(71, 69, 73)
 Clear.BorderColor3 = Color3.fromRGB(0, 0, 0)
 Clear.BorderSizePixel = 0
 Clear.Position = UDim2.new(0.0592503995, 0, 0.305677205, 0)
 Clear.Size = UDim2.new(0.877192974, 0, 0.0879120827, 0)
 Clear.Font = Enum.Font.SourceSansBold
-Clear.Text = "Clear"
+Clear.Text = "Clear Editor"
 Clear.TextColor3 = Color3.fromRGB(255, 255, 255)
 Clear.TextScaled = true
 Clear.TextSize = 25.000
@@ -281,7 +280,7 @@ text1.Position = UDim2.new(0, 0, 0.125410035, 0)
 text1.Size = UDim2.new(0.977502823, 0, 0.866300344, 0)
 text1.Font = Enum.Font.SourceSans
 text1.MultiLine = true
-text1.PlaceholderText = "--[[\\nscript 1\\Remake by Blaze\\n]]--"
+text1.PlaceholderText = "print("Hello World!")"
 text1.Text = ""
 text1.TextColor3 = Color3.fromRGB(255, 255, 255)
 text1.TextScaled = true
@@ -300,7 +299,7 @@ TextBox.BorderSizePixel = 0
 TextBox.Size = UDim2.new(0.129999995, 0, 0.0710000023, 0)
 TextBox.Font = Enum.Font.SourceSansBold
 TextBox.PlaceholderColor3 = Color3.fromRGB(255, 255, 255)
-TextBox.PlaceholderText = "script1"
+TextBox.PlaceholderText = "Script 1"
 TextBox.ShowNativeInput = false
 TextBox.Text = ""
 TextBox.TextColor3 = Color3.fromRGB(0, 0, 0)
@@ -477,7 +476,7 @@ Settings.BorderSizePixel = 0
 Settings.Position = UDim2.new(0.0219298247, 0, 0.365239292, 0)
 Settings.Size = UDim2.new(0.973684192, 0, 0.100755669, 0)
 Settings.Font = Enum.Font.SourceSansBold
-Settings.Text = "Settings (soon)"
+Settings.Text = "Settings"
 Settings.TextColor3 = Color3.fromRGB(255, 255, 255)
 Settings.TextScaled = true
 Settings.TextSize = 20.000
@@ -839,8 +838,6 @@ local function YIUYHUL_fake_script() -- close.LocalScript
 	script.Parent.MouseButton1Down:Connect(function()
 	local maim = script.Parent.Parent.Parent.Parent.main
 	local open = script.Parent.Parent.Parent.Parent.open
-	script.Parent.Active = true
-		script.Parent.Draggable = true
 		script.Parent.Parent.mainbutton.Visible = true
 		script.Parent.Parent.consolebutton.Visible = false
 		script.Parent.Parent.executebutton.Visible = false
@@ -922,8 +919,6 @@ local function OCOAJQ_fake_script() -- ImageButton.LocalScript
 	local maim = script.Parent.Parent.Parent.main
 		script.Parent.Parent.Parent.main.Transparency = 1
 		local open = script.Parent.Parent
-		script.Parent.Active = true
-		script.Parent.Draggable = true
 		game:GetService("TweenService"):Create(open,TweenInfo.new(2),{Position=UDim2.new(-1, 0, 0, 0)}):Play()
 		game:GetService("TweenService"):Create(maim,TweenInfo.new(0.8),{Position=UDim2.new(0,0,0,0)}):Play()
 	end)
@@ -931,8 +926,85 @@ end
 coroutine.wrap(OCOAJQ_fake_script)()
 local function KUUPKPY_fake_script() -- Newfluxsos.LocalScript 
 	local script = Instance.new('LocalScript', Newfluxsos)
+
+	--[[
+	    made by: dak#1111
+	    thanks for using!
+	--]]
 	
+	local function tween(...)
+		game:GetService("TweenService"):Create(...):Play()
+	end
+	
+	game:GetService("ReplicatedFirst"):RemoveDefaultLoadingScreen()
+	local loading = Instance.new("ScreenGui")
+	local background = Instance.new("Frame")
+	local gradient = Instance.new("UIGradient")
+	local status = Instance.new("TextLabel")
+	local ImageLabel = Instance.new("ImageLabel")
+	local UICorner = Instance.new("UICorner")
+	
+	
+	loading.Name = "loading"
+	loading.Parent = game.Players.LocalPlayer.PlayerGui
+	loading.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+	
+	background.Name = "background"
+	background.Parent = loading
+	background.BackgroundColor3 = Color3.fromRGB(57, 57, 57)
+	background.Position = UDim2.new(0, 0, -0.100000001, 0)
+	background.Size = UDim2.new(1, 0, 1.10000002, 0)
+	
+	gradient.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(255, 255, 255)), ColorSequenceKeypoint.new(0.45, Color3.fromRGB(255, 255, 255)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(76, 76, 76))}
+	gradient.Rotation = 90
+	gradient.Name = "gradient"
+	gradient.Parent = background
+	
+	ImageLabel.Parent = loading
+	ImageLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	ImageLabel.BorderColor3 = Color3.fromRGB(0, 0, 0)
+	ImageLabel.BorderSizePixel = 0
+	ImageLabel.BackgroundTransparency = 1
+	ImageLabel.Position = UDim2.new(0.456943512, 0, 0.359848499, 0)
+	ImageLabel.Size = UDim2.new(0, 100, 0, 100)
+	ImageLabel.Image = "rbxassetid://13945092962"
+	
+	UICorner.CornerRadius = UDim.new(1, 8)
+	UICorner.Parent = ImageLabel
+	
+	status.Name = "status"
+	status.Parent = loading
+	status.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	status.BackgroundTransparency = 1.000
+	status.Position = UDim2.new(0, 0, 0.893442631, 0)
+	status.Size = UDim2.new(1, 0, 0.0355480109, 0)
+	status.Font = Enum.Font.SourceSansItalic
+	status.Text = "Thanks for using my scripts / Blitz in here"
+	status.TextColor3 = Color3.fromRGB(255, 255, 255)
+	status.TextScaled = true
+	status.TextSize = 14.000
+	status.TextStrokeColor3 = Color3.fromRGB(52, 52, 52)
+	status.TextStrokeTransparency = 0.000
+	status.TextWrapped = true
+	
+	repeat wait() until game:GetService("Players").LocalPlayer
+	status.Text = "Blitz on top"
+	wait(3)
+	status.Text = "Thanks for using my scripts / Blitz in here"
 	wait(2)
+	status.Text = "haha fluxus sus remake version its beta baby :)"
+	if not game:IsLoaded() then
+		game.Loaded:wait()
+	end
+	
+	wait(5.66)
+	
+	tween(background, TweenInfo.new(3.55), {BackgroundTransparency = 1})
+	tween(status, TweenInfo.new(3.55), {TextTransparency = 1, TextStrokeTransparency = 1})
+	tween(ImageLabel, TweenInfo.new(3.55), {ImageTransparency = 1})
+	
+	wait(2.55)
+	loading:Destroy()
 	script.Parent.open.Visible = true
 end
 coroutine.wrap(KUUPKPY_fake_script)()
