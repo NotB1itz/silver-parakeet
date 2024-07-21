@@ -988,7 +988,7 @@ local function KUUPKPY_fake_script() -- Newfluxsos.LocalScript
 	status.TextWrapped = true
 	
 	repeat wait() until game:GetService("Players").LocalPlayer
-	status.Text = "anya on top"
+	status.Text = "AnyaDev on top"
 	wait(3)
 	status.Text = "Thanks for using my scripts / anya in here"
 	wait(2)
