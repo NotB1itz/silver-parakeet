@@ -1,0 +1,162 @@
+-- Gui to Lua
+-- Version: 3.2
+
+-- Instances:
+
+local ScreenGui = Instance.new("ScreenGui")
+local Main = Instance.new("Frame")
+local UICorner = Instance.new("UICorner")
+local Frame = Instance.new("Frame")
+local UICorner_2 = Instance.new("UICorner")
+local TextLabel = Instance.new("TextLabel")
+local UIAspectRatioConstraint = Instance.new("UIAspectRatioConstraint")
+local UIAspectRatioConstraint_2 = Instance.new("UIAspectRatioConstraint")
+local TextBox = Instance.new("TextBox")
+local UICorner_3 = Instance.new("UICorner")
+local UIAspectRatioConstraint_3 = Instance.new("UIAspectRatioConstraint")
+local exe = Instance.new("TextButton")
+local UICorner_4 = Instance.new("UICorner")
+local UIAspectRatioConstraint_4 = Instance.new("UIAspectRatioConstraint")
+local clear = Instance.new("TextButton")
+local UICorner_5 = Instance.new("UICorner")
+local UIAspectRatioConstraint_5 = Instance.new("UIAspectRatioConstraint")
+local UIAspectRatioConstraint_6 = Instance.new("UIAspectRatioConstraint")
+
+--Properties:
+
+ScreenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+Main.Name = "Main"
+Main.Parent = ScreenGui
+Main.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+Main.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Main.BorderSizePixel = 0
+Main.Position = UDim2.new(0.216899723, 0, 0.259643912, 0)
+Main.Size = UDim2.new(0.751288652, 0, 0.480712175, 0)
+
+UICorner.Parent = Main
+
+Frame.Parent = Main
+Frame.BackgroundColor3 = Color3.fromRGB(31, 31, 31)
+Frame.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Frame.BorderSizePixel = 0
+Frame.Size = UDim2.new(1, 0, 0.188271612, 0)
+
+UICorner_2.Parent = Frame
+
+TextLabel.Parent = Frame
+TextLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel.BackgroundTransparency = 100.000
+TextLabel.BorderColor3 = Color3.fromRGB(253, 253, 253)
+TextLabel.BorderSizePixel = 0
+TextLabel.Position = UDim2.new(0.331046313, 0, 0.0819672048, 0)
+TextLabel.Size = UDim2.new(0.343053162, 0, 0.819672108, 0)
+TextLabel.Font = Enum.Font.FredokaOne
+TextLabel.Text = "Bytrex"
+TextLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel.TextSize = 30.000
+
+UIAspectRatioConstraint.Parent = TextLabel
+UIAspectRatioConstraint.AspectRatio = 4.000
+
+UIAspectRatioConstraint_2.Parent = Frame
+UIAspectRatioConstraint_2.AspectRatio = 9.557
+
+TextBox.Parent = Main
+TextBox.BackgroundColor3 = Color3.fromRGB(35, 35, 35)
+TextBox.BorderColor3 = Color3.fromRGB(0, 0, 0)
+TextBox.BorderSizePixel = 0
+TextBox.Position = UDim2.new(0.0394511148, 0, 0.21296297, 0)
+TextBox.Size = UDim2.new(0.919382513, 0, 0.57407409, 0)
+TextBox.ClearTextOnFocus = false
+TextBox.Font = Enum.Font.SourceSans
+TextBox.PlaceholderColor3 = Color3.fromRGB(66, 66, 66)
+TextBox.PlaceholderText = "print(\"Hello, World!\")"
+TextBox.Text = ""
+TextBox.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextBox.TextSize = 15.000
+TextBox.TextWrapped = true
+TextBox.TextXAlignment = Enum.TextXAlignment.Left
+TextBox.TextYAlignment = Enum.TextYAlignment.Top
+
+UICorner_3.Parent = TextBox
+
+UIAspectRatioConstraint_3.Parent = TextBox
+UIAspectRatioConstraint_3.AspectRatio = 2.882
+
+exe.Name = "exe"
+exe.Parent = Main
+exe.BackgroundColor3 = Color3.fromRGB(35, 35, 35)
+exe.BorderColor3 = Color3.fromRGB(0, 0, 0)
+exe.BorderSizePixel = 0
+exe.Position = UDim2.new(0.0789022297, 0, 0.820987642, 0)
+exe.Size = UDim2.new(0.343053162, 0, 0.154320985, 0)
+exe.Font = Enum.Font.FredokaOne
+exe.Text = "Execute"
+exe.TextColor3 = Color3.fromRGB(255, 255, 255)
+exe.TextScaled = true
+exe.TextSize = 23.000
+exe.TextStrokeColor3 = Color3.fromRGB(255, 255, 255)
+exe.TextWrapped = true
+
+UICorner_4.Parent = exe
+
+UIAspectRatioConstraint_4.Parent = exe
+UIAspectRatioConstraint_4.AspectRatio = 4.000
+
+clear.Name = "clear"
+clear.Parent = Main
+clear.BackgroundColor3 = Color3.fromRGB(35, 35, 35)
+clear.BorderColor3 = Color3.fromRGB(0, 0, 0)
+clear.BorderSizePixel = 0
+clear.Position = UDim2.new(0.578044593, 0, 0.820987642, 0)
+clear.Size = UDim2.new(0.343053162, 0, 0.154320985, 0)
+clear.Font = Enum.Font.FredokaOne
+clear.Text = "Clear"
+clear.TextColor3 = Color3.fromRGB(255, 255, 255)
+clear.TextScaled = true
+clear.TextSize = 23.000
+clear.TextStrokeColor3 = Color3.fromRGB(255, 255, 255)
+clear.TextWrapped = true
+
+UICorner_5.Parent = clear
+
+UIAspectRatioConstraint_5.Parent = clear
+UIAspectRatioConstraint_5.AspectRatio = 4.000
+
+UIAspectRatioConstraint_6.Parent = Main
+UIAspectRatioConstraint_6.AspectRatio = 1.799
+
+-- Scripts:
+
+local function HIBWWM_fake_script() -- exe.exe script 
+	local script = Instance.new('LocalScript', exe)
+
+	local button = script.Parent
+	local textbox = button.Parent.TextBox
+	button.MouseButton1Click: Connect(function() 	
+		loadstring(textbox.Text)() 
+	end)
+	
+end
+coroutine.wrap(HIBWWM_fake_script)()
+local function PBMZWKB_fake_script() -- clear.clear script 
+	local script = Instance.new('LocalScript', clear)
+
+	local button = script.Parent
+	local textbox = button.Parent.TextBox
+	button.MouseButton1Click: Connect(function() 	
+		textbox.Text = ""
+	end)
+	
+end
+coroutine.wrap(PBMZWKB_fake_script)()
+local function BMDMM_fake_script() -- Main.LocalScript 
+	local script = Instance.new('LocalScript', Main)
+
+	script.Parent.Draggable = true
+	script.Parent.Active = true
+	
+end
+coroutine.wrap(BMDMM_fake_script)()
