@@ -1,125 +1,154 @@
-local delta = Instance.new("ScreenGui")
-local Frame = Instance.new("Frame")
-local UICorner = Instance.new("UICorner")
-local TextBox = Instance.new("TextBox")
-local UITextSizeConstraint = Instance.new("UITextSizeConstraint")
-local UIAspectRatioConstraint = Instance.new("UIAspectRatioConstraint")
-local exebutton = Instance.new("TextButton")
-local UICorner_2 = Instance.new("UICorner")
-local UITextSizeConstraint_2 = Instance.new("UITextSizeConstraint")
-local UIAspectRatioConstraint_2 = Instance.new("UIAspectRatioConstraint")
-local clear = Instance.new("TextButton")
-local UICorner_3 = Instance.new("UICorner")
-local UITextSizeConstraint_3 = Instance.new("UITextSizeConstraint")
-local UIAspectRatioConstraint_3 = Instance.new("UIAspectRatioConstraint")
-local UIAspectRatioConstraint_4 = Instance.new("UIAspectRatioConstraint")
-local ImageButton = Instance.new("ImageButton")
-local UICorner_4 = Instance.new("UICorner")
-local UIAspectRatioConstraint_5 = Instance.new("UIAspectRatioConstraint")
+local G2L = {};
 
---Properties:
+-- StarterGui.delta
+G2L["1"] = Instance.new("ScreenGui", game:GetService("Players").LocalPlayer:WaitForChild("PlayerGui"));
+G2L["1"]["IgnoreGuiInset"] = true;
+G2L["1"]["ScreenInsets"] = Enum.ScreenInsets.DeviceSafeInsets;
+G2L["1"]["Name"] = [[delta]];
+G2L["1"]["ZIndexBehavior"] = Enum.ZIndexBehavior.Sibling;
 
-delta.Name = "delta"
-delta.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
-delta.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+-- StarterGui.delta.Frame
+G2L["2"] = Instance.new("Frame", G2L["1"]);
+G2L["2"]["Visible"] = false;
+G2L["2"]["BorderSizePixel"] = 0;
+G2L["2"]["BackgroundColor3"] = Color3.fromRGB(27, 29, 37);
+G2L["2"]["Size"] = UDim2.new(0.47358, 0, 0.44214, 0);
+G2L["2"]["Position"] = UDim2.new(0.26226, 0, 0.27745, 0);
+G2L["2"]["BorderColor3"] = Color3.fromRGB(66, 170, 255);
 
-Frame.Parent = delta
-Frame.BackgroundColor3 = Color3.fromRGB(26, 28, 36)
-Frame.BorderColor3 = Color3.fromRGB(65, 169, 255)
-Frame.BorderSizePixel = 2
-Frame.Position = UDim2.new(0.262264162, 0, 0.277448058, 0)
-Frame.Size = UDim2.new(0.47358492, 0, 0.442136496, 0)
-Frame.Visible = false
+-- StarterGui.delta.Frame.UICorner
+G2L["3"] = Instance.new("UICorner", G2L["2"]);
 
-UICorner.Parent = Frame
 
-TextBox.Parent = Frame
-TextBox.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
-TextBox.BorderColor3 = Color3.fromRGB(65, 169, 255)
-TextBox.BorderSizePixel = 2
-TextBox.Position = UDim2.new(0.0418326706, 0, 0.104026847, 0)
-TextBox.Size = UDim2.new(0.908366561, 0, 0.657718122, 0)
-TextBox.ClearTextOnFocus = false
-TextBox.Font = Enum.Font.SourceSans
-TextBox.PlaceholderText = "print(\"Hello, World!\")"
-TextBox.Text = ""
-TextBox.TextColor3 = Color3.fromRGB(254, 254, 254)
-TextBox.TextScaled = true
-TextBox.TextSize = 14.000
-TextBox.TextWrapped = true
-TextBox.TextXAlignment = Enum.TextXAlignment.Left
-TextBox.TextYAlignment = Enum.TextYAlignment.Top
+-- StarterGui.delta.Frame.TextBox
+G2L["4"] = Instance.new("TextBox", G2L["2"]);
+G2L["4"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["4"]["BorderSizePixel"] = 2;
+G2L["4"]["TextXAlignment"] = Enum.TextXAlignment.Left;
+G2L["4"]["TextWrapped"] = true;
+G2L["4"]["TextTruncate"] = Enum.TextTruncate.AtEnd;
+G2L["4"]["TextSize"] = 16;
+G2L["4"]["TextYAlignment"] = Enum.TextYAlignment.Top;
+G2L["4"]["BackgroundColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["4"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["4"]["ClearTextOnFocus"] = false;
+G2L["4"]["PlaceholderText"] = [[print("Hello, World!")]];
+G2L["4"]["Size"] = UDim2.new(0.90837, 0, 0.65772, 0);
+G2L["4"]["Position"] = UDim2.new(0.04183, 0, 0.10403, 0);
+G2L["4"]["BorderColor3"] = Color3.fromRGB(66, 170, 255);
+G2L["4"]["Text"] = [[]];
 
-UITextSizeConstraint.Parent = TextBox
-UITextSizeConstraint.MaxTextSize = 14
+-- StarterGui.delta.Frame.TextBox.UITextSizeConstraint
+G2L["5"] = Instance.new("UITextSizeConstraint", G2L["4"]);
+G2L["5"]["MaxTextSize"] = 14;
 
-UIAspectRatioConstraint.Parent = TextBox
-UIAspectRatioConstraint.AspectRatio = 2.327
+-- StarterGui.delta.Frame.TextBox.UIAspectRatioConstraint
+G2L["6"] = Instance.new("UIAspectRatioConstraint", G2L["4"]);
+G2L["6"]["AspectRatio"] = 2.32653;
 
-exebutton.Name = "exe button"
-exebutton.Parent = Frame
-exebutton.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
-exebutton.BorderColor3 = Color3.fromRGB(0, 0, 0)
-exebutton.BorderSizePixel = 0
-exebutton.Position = UDim2.new(0.0418326706, 0, 0.791946292, 0)
-exebutton.Size = UDim2.new(0.398406386, 0, 0.167785242, 0)
-exebutton.Font = Enum.Font.FredokaOne
-exebutton.Text = "Execute"
-exebutton.TextColor3 = Color3.fromRGB(255, 255, 255)
-exebutton.TextScaled = true
-exebutton.TextSize = 14.000
-exebutton.TextWrapped = true
+-- StarterGui.delta.Frame.exe button
+G2L["7"] = Instance.new("TextButton", G2L["2"]);
+G2L["7"]["TextWrapped"] = true;
+G2L["7"]["BorderSizePixel"] = 0;
+G2L["7"]["TextSize"] = 14;
+G2L["7"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["7"]["TextScaled"] = true;
+G2L["7"]["BackgroundColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["7"]["FontFace"] = Font.new([[rbxasset://fonts/families/FredokaOne.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["7"]["Size"] = UDim2.new(0.39841, 0, 0.16779, 0);
+G2L["7"]["Name"] = [[exe button]];
+G2L["7"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["7"]["Text"] = [[Execute]];
+G2L["7"]["Position"] = UDim2.new(0.04183, 0, 0.79195, 0);
 
-UICorner_2.Parent = exebutton
+-- StarterGui.delta.Frame.exe button.UICorner
+G2L["8"] = Instance.new("UICorner", G2L["7"]);
 
-UITextSizeConstraint_2.Parent = exebutton
-UITextSizeConstraint_2.MaxTextSize = 50
 
-UIAspectRatioConstraint_2.Parent = exebutton
-UIAspectRatioConstraint_2.AspectRatio = 4.000
+-- StarterGui.delta.Frame.exe button.exe script
+G2L["9"] = Instance.new("LocalScript", G2L["7"]);
+G2L["9"]["Name"] = [[exe script]];
 
-clear.Name = "clear"
-clear.Parent = Frame
-clear.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
-clear.BorderColor3 = Color3.fromRGB(0, 0, 0)
-clear.BorderSizePixel = 0
-clear.Position = UDim2.new(0.5517928, 0, 0.791946292, 0)
-clear.Size = UDim2.new(0.398406357, 0, 0.167785242, 0)
-clear.Font = Enum.Font.FredokaOne
-clear.Text = "Clear"
-clear.TextColor3 = Color3.fromRGB(255, 255, 255)
-clear.TextScaled = true
-clear.TextSize = 14.000
-clear.TextWrapped = true
+-- StarterGui.delta.Frame.exe button.UITextSizeConstraint
+G2L["a"] = Instance.new("UITextSizeConstraint", G2L["7"]);
+G2L["a"]["MaxTextSize"] = 50;
 
-UICorner_3.Parent = clear
+-- StarterGui.delta.Frame.exe button.UIAspectRatioConstraint
+G2L["b"] = Instance.new("UIAspectRatioConstraint", G2L["7"]);
+G2L["b"]["AspectRatio"] = 4;
 
-UITextSizeConstraint_3.Parent = clear
-UITextSizeConstraint_3.MaxTextSize = 50
+-- StarterGui.delta.Frame.clear
+G2L["c"] = Instance.new("TextButton", G2L["2"]);
+G2L["c"]["TextWrapped"] = true;
+G2L["c"]["BorderSizePixel"] = 0;
+G2L["c"]["TextSize"] = 14;
+G2L["c"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["c"]["TextScaled"] = true;
+G2L["c"]["BackgroundColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["c"]["FontFace"] = Font.new([[rbxasset://fonts/families/FredokaOne.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["c"]["Size"] = UDim2.new(0.39841, 0, 0.16779, 0);
+G2L["c"]["Name"] = [[clear]];
+G2L["c"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["c"]["Text"] = [[Clear]];
+G2L["c"]["Position"] = UDim2.new(0.55179, 0, 0.79195, 0);
 
-UIAspectRatioConstraint_3.Parent = clear
-UIAspectRatioConstraint_3.AspectRatio = 4.000
+-- StarterGui.delta.Frame.clear.UICorner
+G2L["d"] = Instance.new("UICorner", G2L["c"]);
 
-UIAspectRatioConstraint_4.Parent = Frame
-UIAspectRatioConstraint_4.AspectRatio = 1.685
 
-ImageButton.Parent = delta
-ImageButton.BackgroundColor3 = Color3.fromRGB(26, 28, 36)
-ImageButton.BorderColor3 = Color3.fromRGB(65, 169, 255)
-ImageButton.BorderSizePixel = 2
-ImageButton.Position = UDim2.new(0.454719692, 0, 0.0275551807, 0)
-ImageButton.Size = UDim2.new(0, 60, 0, 60)
-ImageButton.Image = "rbxassetid://12730597972"
+-- StarterGui.delta.Frame.clear.clear script
+G2L["e"] = Instance.new("LocalScript", G2L["c"]);
+G2L["e"]["Name"] = [[clear script]];
 
-UICorner_4.Parent = ImageButton
+-- StarterGui.delta.Frame.clear.UITextSizeConstraint
+G2L["f"] = Instance.new("UITextSizeConstraint", G2L["c"]);
+G2L["f"]["MaxTextSize"] = 50;
 
-UIAspectRatioConstraint_5.Parent = ImageButton
+-- StarterGui.delta.Frame.clear.UIAspectRatioConstraint
+G2L["10"] = Instance.new("UIAspectRatioConstraint", G2L["c"]);
+G2L["10"]["AspectRatio"] = 4;
 
--- Scripts:
+-- StarterGui.delta.Frame.drang ui
+G2L["11"] = Instance.new("LocalScript", G2L["2"]);
+G2L["11"]["Name"] = [[drang ui]];
 
-local function KJPRG_fake_script() -- exebutton.exe script 
-	local script = Instance.new('LocalScript', exebutton)
+-- StarterGui.delta.Frame.UIAspectRatioConstraint
+G2L["12"] = Instance.new("UIAspectRatioConstraint", G2L["2"]);
+G2L["12"]["AspectRatio"] = 1.68456;
 
+-- StarterGui.delta.ImageButton
+G2L["13"] = Instance.new("ImageButton", G2L["1"]);
+G2L["13"]["BorderSizePixel"] = 2;
+G2L["13"]["BackgroundColor3"] = Color3.fromRGB(27, 29, 37);
+G2L["13"]["Image"] = [[rbxassetid://12730597972]];
+G2L["13"]["Size"] = UDim2.new(0, 60, 0, 60);
+G2L["13"]["BorderColor3"] = Color3.fromRGB(66, 170, 255);
+G2L["13"]["Position"] = UDim2.new(0.45472, 0, 0.02756, 0);
+
+-- StarterGui.delta.ImageButton.UICorner
+G2L["14"] = Instance.new("UICorner", G2L["13"]);
+
+
+-- StarterGui.delta.ImageButton.UIStroke
+G2L["15"] = Instance.new("UIStroke", G2L["13"]);
+G2L["15"]["Thickness"] = 2;
+G2L["15"]["Color"] = Color3.fromRGB(66, 170, 255);
+
+-- StarterGui.delta.ImageButton.MOVE SCRIPT
+G2L["16"] = Instance.new("LocalScript", G2L["13"]);
+G2L["16"]["Name"] = [[MOVE SCRIPT]];
+
+-- StarterGui.delta.ImageButton.UIAspectRatioConstraint
+G2L["17"] = Instance.new("UIAspectRatioConstraint", G2L["13"]);
+
+
+-- StarterGui.delta.LocalScript
+G2L["18"] = Instance.new("LocalScript", G2L["1"]);
+
+
+-- StarterGui.delta.Frame.exe button.exe script
+local function C_9()
+local script = G2L["9"];
 	local button = script.Parent
 	local textbox = button.Parent.TextBox
 	button.MouseButton1Click: Connect(function() 	
@@ -127,37 +156,37 @@ local function KJPRG_fake_script() -- exebutton.exe script
 	end)
 	
 	
-end
-coroutine.wrap(KJPRG_fake_script)()
-local function KCLQ_fake_script() -- clear.clear script 
-	local script = Instance.new('LocalScript', clear)
-
+end;
+task.spawn(C_9);
+-- StarterGui.delta.Frame.clear.clear script
+local function C_e()
+local script = G2L["e"];
 	local button = script.Parent
 	local textbox = button.Parent.TextBox
 	button.MouseButton1Click: Connect(function() 	
 		textbox.Text = ""
 	end)
 	
-end
-coroutine.wrap(KCLQ_fake_script)()
-local function NAWQMB_fake_script() -- Frame.drang ui 
-	local script = Instance.new('LocalScript', Frame)
-
+end;
+task.spawn(C_e);
+-- StarterGui.delta.Frame.drang ui
+local function C_11()
+local script = G2L["11"];
 	script.Parent.Draggable = true
 	script.Parent.Active = true
 	
-end
-coroutine.wrap(NAWQMB_fake_script)()
-local function RDWQPXW_fake_script() -- ImageButton.MOVE SCRIPT 
-	local script = Instance.new('LocalScript', ImageButton)
-
+end;
+task.spawn(C_11);
+-- StarterGui.delta.ImageButton.MOVE SCRIPT
+local function C_16()
+local script = G2L["16"];
 	script.Parent.Draggable = true
 	script.Parent.Active = true
-end
-coroutine.wrap(RDWQPXW_fake_script)()
-local function WZZQMLY_fake_script() -- delta.LocalScript 
-	local script = Instance.new('LocalScript', delta)
-
+end;
+task.spawn(C_16);
+-- StarterGui.delta.LocalScript
+local function C_18()
+local script = G2L["18"];
 	print("Hello world!")local SGui = script.Parent
 	local Frame = SGui:WaitForChild("Frame")
 	local Button = SGui:WaitForChild("ImageButton")
@@ -165,5 +194,7 @@ local function WZZQMLY_fake_script() -- delta.LocalScript
 	Button.MouseButton1Up:Connect(function()
 		Frame.Visible = not Frame.Visible
 	end)
-end
-coroutine.wrap(WZZQMLY_fake_script)()
+end;
+task.spawn(C_18);
+
+return G2L["1"], require;
