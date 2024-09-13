@@ -1,162 +1,1519 @@
--- Gui to Lua
--- Version: 3.2
+--[=[
+ d888b  db    db d888888b      .d888b.      db      db    db  .d8b.  
+88' Y8b 88    88   `88'        VP  `8D      88      88    88 d8' `8b 
+88      88    88    88            odD'      88      88    88 88ooo88 
+88  ooo 88    88    88          .88'        88      88    88 88~~~88 
+88. ~8~ 88b  d88   .88.        j88.         88booo. 88b  d88 88   88    @uniquadev
+ Y888P  ~Y8888P' Y888888P      888888D      Y88888P ~Y8888P' YP   YP  CONVERTER 
+]=]
 
--- Instances:
+-- Instances: 143 | Scripts: 20 | Modules: 0
+local G2L = {};
 
-local ScreenGui = Instance.new("ScreenGui")
-local Main = Instance.new("Frame")
-local UICorner = Instance.new("UICorner")
-local Frame = Instance.new("Frame")
-local UICorner_2 = Instance.new("UICorner")
-local TextLabel = Instance.new("TextLabel")
-local UIAspectRatioConstraint = Instance.new("UIAspectRatioConstraint")
-local UIAspectRatioConstraint_2 = Instance.new("UIAspectRatioConstraint")
-local TextBox = Instance.new("TextBox")
-local UICorner_3 = Instance.new("UICorner")
-local UIAspectRatioConstraint_3 = Instance.new("UIAspectRatioConstraint")
-local exe = Instance.new("TextButton")
-local UICorner_4 = Instance.new("UICorner")
-local UIAspectRatioConstraint_4 = Instance.new("UIAspectRatioConstraint")
-local clear = Instance.new("TextButton")
-local UICorner_5 = Instance.new("UICorner")
-local UIAspectRatioConstraint_5 = Instance.new("UIAspectRatioConstraint")
-local UIAspectRatioConstraint_6 = Instance.new("UIAspectRatioConstraint")
+-- StarterGui.ScreenGui
+G2L["1"] = Instance.new("ScreenGui", game:GetService("Players").LocalPlayer:WaitForChild("PlayerGui"));
+G2L["1"]["IgnoreGuiInset"] = true;
+G2L["1"]["ScreenInsets"] = Enum.ScreenInsets.DeviceSafeInsets;
+G2L["1"]["ZIndexBehavior"] = Enum.ZIndexBehavior.Sibling;
 
---Properties:
+-- StarterGui.ScreenGui.bring fluxus
+G2L["2"] = Instance.new("ImageButton", G2L["1"]);
+G2L["2"]["BorderSizePixel"] = 0;
+G2L["2"]["BackgroundColor3"] = Color3.fromRGB(78, 78, 78);
+G2L["2"]["Image"] = [[rbxassetid://13945092962]];
+G2L["2"]["Size"] = UDim2.new(0.03725, 0, 0.06696, 0);
+G2L["2"]["Name"] = [[bring fluxus]];
+G2L["2"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["2"]["Position"] = UDim2.new(0.0066, 0, 0.08631, 0);
 
-ScreenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
-ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+-- StarterGui.ScreenGui.bring fluxus.UICorner
+G2L["3"] = Instance.new("UICorner", G2L["2"]);
+G2L["3"]["CornerRadius"] = UDim.new(0.5, 0);
 
-Main.Name = "Main"
-Main.Parent = ScreenGui
-Main.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
-Main.BorderColor3 = Color3.fromRGB(0, 0, 0)
-Main.BorderSizePixel = 0
-Main.Position = UDim2.new(0.216899723, 0, 0.259643912, 0)
-Main.Size = UDim2.new(0.751288652, 0, 0.480712175, 0)
+-- StarterGui.ScreenGui.bring fluxus.LocalScript
+G2L["4"] = Instance.new("LocalScript", G2L["2"]);
 
-UICorner.Parent = Main
 
-Frame.Parent = Main
-Frame.BackgroundColor3 = Color3.fromRGB(31, 31, 31)
-Frame.BorderColor3 = Color3.fromRGB(0, 0, 0)
-Frame.BorderSizePixel = 0
-Frame.Size = UDim2.new(1, 0, 0.188271612, 0)
+-- StarterGui.ScreenGui.main fluxus ui
+G2L["5"] = Instance.new("Frame", G2L["1"]);
+G2L["5"]["Visible"] = false;
+G2L["5"]["BorderSizePixel"] = 0;
+G2L["5"]["BackgroundColor3"] = Color3.fromRGB(78, 78, 78);
+G2L["5"]["Size"] = UDim2.new(0.20695, 0, 1.0253, 0);
+G2L["5"]["Position"] = UDim2.new(0, 0, -0.0253, 0);
+G2L["5"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["5"]["Name"] = [[main fluxus ui]];
 
-UICorner_2.Parent = Frame
+-- StarterGui.ScreenGui.main fluxus ui.fluxus back
+G2L["6"] = Instance.new("ImageButton", G2L["5"]);
+G2L["6"]["BorderSizePixel"] = 0;
+G2L["6"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["6"]["Image"] = [[rbxassetid://13945092962]];
+G2L["6"]["Size"] = UDim2.new(0.4, 0, 0.14514, 0);
+G2L["6"]["BackgroundTransparency"] = 1;
+G2L["6"]["Name"] = [[fluxus back]];
+G2L["6"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["6"]["Position"] = UDim2.new(0.3, 0, 0.08631, 0);
 
-TextLabel.Parent = Frame
-TextLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-TextLabel.BackgroundTransparency = 100.000
-TextLabel.BorderColor3 = Color3.fromRGB(253, 253, 253)
-TextLabel.BorderSizePixel = 0
-TextLabel.Position = UDim2.new(0.331046313, 0, 0.0819672048, 0)
-TextLabel.Size = UDim2.new(0.343053162, 0, 0.819672108, 0)
-TextLabel.Font = Enum.Font.FredokaOne
-TextLabel.Text = "Bytrex"
-TextLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
-TextLabel.TextSize = 30.000
+-- StarterGui.ScreenGui.main fluxus ui.fluxus back.LocalScript
+G2L["7"] = Instance.new("LocalScript", G2L["6"]);
 
-UIAspectRatioConstraint.Parent = TextLabel
-UIAspectRatioConstraint.AspectRatio = 4.000
 
-UIAspectRatioConstraint_2.Parent = Frame
-UIAspectRatioConstraint_2.AspectRatio = 9.557
+-- StarterGui.ScreenGui.main fluxus ui.Excutor button
+G2L["8"] = Instance.new("TextButton", G2L["5"]);
+G2L["8"]["TextWrapped"] = true;
+G2L["8"]["BorderSizePixel"] = 0;
+G2L["8"]["TextSize"] = 14;
+G2L["8"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["8"]["TextScaled"] = true;
+G2L["8"]["BackgroundColor3"] = Color3.fromRGB(123, 123, 123);
+G2L["8"]["FontFace"] = Font.new([[rbxasset://fonts/families/FredokaOne.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["8"]["RichText"] = true;
+G2L["8"]["Size"] = UDim2.new(0.876, 0, 0.06096, 0);
+G2L["8"]["Name"] = [[Excutor button]];
+G2L["8"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["8"]["Text"] = [[Excutor]];
+G2L["8"]["Position"] = UDim2.new(0.06, 0, 0.29315, 0);
 
-TextBox.Parent = Main
-TextBox.BackgroundColor3 = Color3.fromRGB(35, 35, 35)
-TextBox.BorderColor3 = Color3.fromRGB(0, 0, 0)
-TextBox.BorderSizePixel = 0
-TextBox.Position = UDim2.new(0.0394511148, 0, 0.21296297, 0)
-TextBox.Size = UDim2.new(0.919382513, 0, 0.57407409, 0)
-TextBox.ClearTextOnFocus = false
-TextBox.Font = Enum.Font.SourceSans
-TextBox.PlaceholderColor3 = Color3.fromRGB(66, 66, 66)
-TextBox.PlaceholderText = "print(\"Hello, World!\")"
-TextBox.Text = ""
-TextBox.TextColor3 = Color3.fromRGB(255, 255, 255)
-TextBox.TextSize = 15.000
-TextBox.TextWrapped = true
-TextBox.TextXAlignment = Enum.TextXAlignment.Left
-TextBox.TextYAlignment = Enum.TextYAlignment.Top
+-- StarterGui.ScreenGui.main fluxus ui.Excutor button.UICorner
+G2L["9"] = Instance.new("UICorner", G2L["8"]);
 
-UICorner_3.Parent = TextBox
 
-UIAspectRatioConstraint_3.Parent = TextBox
-UIAspectRatioConstraint_3.AspectRatio = 2.882
+-- StarterGui.ScreenGui.main fluxus ui.Excutor button.LocalScript
+G2L["a"] = Instance.new("LocalScript", G2L["8"]);
 
-exe.Name = "exe"
-exe.Parent = Main
-exe.BackgroundColor3 = Color3.fromRGB(35, 35, 35)
-exe.BorderColor3 = Color3.fromRGB(0, 0, 0)
-exe.BorderSizePixel = 0
-exe.Position = UDim2.new(0.0789022297, 0, 0.820987642, 0)
-exe.Size = UDim2.new(0.343053162, 0, 0.154320985, 0)
-exe.Font = Enum.Font.FredokaOne
-exe.Text = "Execute"
-exe.TextColor3 = Color3.fromRGB(255, 255, 255)
-exe.TextScaled = true
-exe.TextSize = 23.000
-exe.TextStrokeColor3 = Color3.fromRGB(255, 255, 255)
-exe.TextWrapped = true
 
-UICorner_4.Parent = exe
+-- StarterGui.ScreenGui.main fluxus ui.Excutor button.LocalScript
+G2L["b"] = Instance.new("LocalScript", G2L["8"]);
 
-UIAspectRatioConstraint_4.Parent = exe
-UIAspectRatioConstraint_4.AspectRatio = 4.000
 
-clear.Name = "clear"
-clear.Parent = Main
-clear.BackgroundColor3 = Color3.fromRGB(35, 35, 35)
-clear.BorderColor3 = Color3.fromRGB(0, 0, 0)
-clear.BorderSizePixel = 0
-clear.Position = UDim2.new(0.578044593, 0, 0.820987642, 0)
-clear.Size = UDim2.new(0.343053162, 0, 0.154320985, 0)
-clear.Font = Enum.Font.FredokaOne
-clear.Text = "Clear"
-clear.TextColor3 = Color3.fromRGB(255, 255, 255)
-clear.TextScaled = true
-clear.TextSize = 23.000
-clear.TextStrokeColor3 = Color3.fromRGB(255, 255, 255)
-clear.TextWrapped = true
+-- StarterGui.ScreenGui.main fluxus ui.Excutor button.UITextSizeConstraint
+G2L["c"] = Instance.new("UITextSizeConstraint", G2L["8"]);
+G2L["c"]["MaxTextSize"] = 42;
 
-UICorner_5.Parent = clear
+-- StarterGui.ScreenGui.main fluxus ui.Cloud 
+G2L["d"] = Instance.new("TextButton", G2L["5"]);
+G2L["d"]["TextWrapped"] = true;
+G2L["d"]["BorderSizePixel"] = 0;
+G2L["d"]["TextSize"] = 14;
+G2L["d"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["d"]["TextScaled"] = true;
+G2L["d"]["BackgroundColor3"] = Color3.fromRGB(123, 123, 123);
+G2L["d"]["FontFace"] = Font.new([[rbxasset://fonts/families/FredokaOne.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["d"]["RichText"] = true;
+G2L["d"]["Size"] = UDim2.new(0.876, 0, 0.06096, 0);
+G2L["d"]["Name"] = [[Cloud ]];
+G2L["d"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["d"]["Text"] = [[Cloud (soon)]];
+G2L["d"]["Position"] = UDim2.new(0.06, 0, 0.36718, 0);
 
-UIAspectRatioConstraint_5.Parent = clear
-UIAspectRatioConstraint_5.AspectRatio = 4.000
+-- StarterGui.ScreenGui.main fluxus ui.Cloud .UICorner
+G2L["e"] = Instance.new("UICorner", G2L["d"]);
 
-UIAspectRatioConstraint_6.Parent = Main
-UIAspectRatioConstraint_6.AspectRatio = 1.799
 
--- Scripts:
+-- StarterGui.ScreenGui.main fluxus ui.Cloud .UITextSizeConstraint
+G2L["f"] = Instance.new("UITextSizeConstraint", G2L["d"]);
+G2L["f"]["MaxTextSize"] = 42;
 
-local function HIBWWM_fake_script() -- exe.exe script 
-	local script = Instance.new('LocalScript', exe)
+-- StarterGui.ScreenGui.main fluxus ui.Credits
+G2L["10"] = Instance.new("TextButton", G2L["5"]);
+G2L["10"]["TextWrapped"] = true;
+G2L["10"]["BorderSizePixel"] = 0;
+G2L["10"]["TextSize"] = 14;
+G2L["10"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["10"]["TextScaled"] = true;
+G2L["10"]["BackgroundColor3"] = Color3.fromRGB(123, 123, 123);
+G2L["10"]["FontFace"] = Font.new([[rbxasset://fonts/families/FredokaOne.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["10"]["RichText"] = true;
+G2L["10"]["Size"] = UDim2.new(0.876, 0, 0.06096, 0);
+G2L["10"]["Name"] = [[Credits]];
+G2L["10"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["10"]["Text"] = [[Credits]];
+G2L["10"]["Position"] = UDim2.new(0.06, 0, 0.51957, 0);
 
+-- StarterGui.ScreenGui.main fluxus ui.Credits.UICorner
+G2L["11"] = Instance.new("UICorner", G2L["10"]);
+
+
+-- StarterGui.ScreenGui.main fluxus ui.Credits.LocalScript
+G2L["12"] = Instance.new("LocalScript", G2L["10"]);
+
+
+-- StarterGui.ScreenGui.main fluxus ui.Credits.LocalScript
+G2L["13"] = Instance.new("LocalScript", G2L["10"]);
+
+
+-- StarterGui.ScreenGui.main fluxus ui.Credits.UITextSizeConstraint
+G2L["14"] = Instance.new("UITextSizeConstraint", G2L["10"]);
+G2L["14"]["MaxTextSize"] = 42;
+
+-- StarterGui.ScreenGui.main fluxus ui.console
+G2L["15"] = Instance.new("TextButton", G2L["5"]);
+G2L["15"]["TextWrapped"] = true;
+G2L["15"]["BorderSizePixel"] = 0;
+G2L["15"]["TextSize"] = 14;
+G2L["15"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["15"]["TextScaled"] = true;
+G2L["15"]["BackgroundColor3"] = Color3.fromRGB(123, 123, 123);
+G2L["15"]["FontFace"] = Font.new([[rbxasset://fonts/families/FredokaOne.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["15"]["RichText"] = true;
+G2L["15"]["Size"] = UDim2.new(0.876, 0, 0.06096, 0);
+G2L["15"]["Name"] = [[console]];
+G2L["15"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["15"]["Text"] = [[Console]];
+G2L["15"]["Position"] = UDim2.new(0.06, 0, 0.44265, 0);
+
+-- StarterGui.ScreenGui.main fluxus ui.console.UICorner
+G2L["16"] = Instance.new("UICorner", G2L["15"]);
+
+
+-- StarterGui.ScreenGui.main fluxus ui.console.LocalScript
+G2L["17"] = Instance.new("LocalScript", G2L["15"]);
+
+
+-- StarterGui.ScreenGui.main fluxus ui.console.LocalScript
+G2L["18"] = Instance.new("LocalScript", G2L["15"]);
+
+
+-- StarterGui.ScreenGui.main fluxus ui.console.UITextSizeConstraint
+G2L["19"] = Instance.new("UITextSizeConstraint", G2L["15"]);
+G2L["19"]["MaxTextSize"] = 42;
+
+-- StarterGui.ScreenGui.excuter frame
+G2L["1a"] = Instance.new("Frame", G2L["1"]);
+G2L["1a"]["Visible"] = false;
+G2L["1a"]["BorderSizePixel"] = 0;
+G2L["1a"]["BackgroundColor3"] = Color3.fromRGB(78, 78, 78);
+G2L["1a"]["Size"] = UDim2.new(0.20695, 0, 1, 0);
+G2L["1a"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["1a"]["Name"] = [[excuter frame]];
+
+-- StarterGui.ScreenGui.excuter frame.ImageLabel
+G2L["1b"] = Instance.new("ImageLabel", G2L["1a"]);
+G2L["1b"]["BorderSizePixel"] = 0;
+G2L["1b"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["1b"]["Image"] = [[rbxassetid://13945092962]];
+G2L["1b"]["Size"] = UDim2.new(0.4, 0, 0.14881, 0);
+G2L["1b"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["1b"]["BackgroundTransparency"] = 1;
+G2L["1b"]["Position"] = UDim2.new(0.3, 0, 0.08631, 0);
+
+-- StarterGui.ScreenGui.excuter frame.TextBox
+G2L["1c"] = Instance.new("TextBox", G2L["1a"]);
+G2L["1c"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["1c"]["PlaceholderColor3"] = Color3.fromRGB(189, 189, 189);
+G2L["1c"]["BorderSizePixel"] = 0;
+G2L["1c"]["TextXAlignment"] = Enum.TextXAlignment.Left;
+G2L["1c"]["TextWrapped"] = true;
+G2L["1c"]["TextTruncate"] = Enum.TextTruncate.AtEnd;
+G2L["1c"]["TextSize"] = 18;
+G2L["1c"]["TextYAlignment"] = Enum.TextYAlignment.Top;
+G2L["1c"]["TextScaled"] = true;
+G2L["1c"]["BackgroundColor3"] = Color3.fromRGB(53, 53, 53);
+G2L["1c"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["1c"]["RichText"] = true;
+G2L["1c"]["MultiLine"] = true;
+G2L["1c"]["ClearTextOnFocus"] = false;
+G2L["1c"]["ClipsDescendants"] = true;
+G2L["1c"]["PlaceholderText"] = [[-- FellProgamP2 on top]];
+G2L["1c"]["Size"] = UDim2.new(3.876, 0, 1, 0);
+G2L["1c"]["Position"] = UDim2.new(1, 0, 0, 0);
+G2L["1c"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["1c"]["Text"] = [[]];
+G2L["1c"]["BackgroundTransparency"] = 0.25;
+
+-- StarterGui.ScreenGui.excuter frame.TextBox.UITextSizeConstraint
+G2L["1d"] = Instance.new("UITextSizeConstraint", G2L["1c"]);
+G2L["1d"]["MaxTextSize"] = 18;
+
+-- StarterGui.ScreenGui.excuter frame.back button
+G2L["1e"] = Instance.new("TextButton", G2L["1a"]);
+G2L["1e"]["TextWrapped"] = true;
+G2L["1e"]["BorderSizePixel"] = 0;
+G2L["1e"]["TextSize"] = 14;
+G2L["1e"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["1e"]["TextScaled"] = true;
+G2L["1e"]["BackgroundColor3"] = Color3.fromRGB(62, 62, 62);
+G2L["1e"]["FontFace"] = Font.new([[rbxasset://fonts/families/FredokaOne.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["1e"]["RichText"] = true;
+G2L["1e"]["Size"] = UDim2.new(0.876, 0, 0.0625, 0);
+G2L["1e"]["Name"] = [[back button]];
+G2L["1e"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["1e"]["Text"] = [[Back]];
+G2L["1e"]["Position"] = UDim2.new(0.06, 0, 0.29315, 0);
+
+-- StarterGui.ScreenGui.excuter frame.back button.UICorner
+G2L["1f"] = Instance.new("UICorner", G2L["1e"]);
+
+
+-- StarterGui.ScreenGui.excuter frame.back button.LocalScript
+G2L["20"] = Instance.new("LocalScript", G2L["1e"]);
+
+
+-- StarterGui.ScreenGui.excuter frame.back button.LocalScript
+G2L["21"] = Instance.new("LocalScript", G2L["1e"]);
+
+
+-- StarterGui.ScreenGui.excuter frame.back button.UITextSizeConstraint
+G2L["22"] = Instance.new("UITextSizeConstraint", G2L["1e"]);
+G2L["22"]["MaxTextSize"] = 42;
+
+-- StarterGui.ScreenGui.excuter frame.exe button
+G2L["23"] = Instance.new("TextButton", G2L["1a"]);
+G2L["23"]["TextWrapped"] = true;
+G2L["23"]["BorderSizePixel"] = 0;
+G2L["23"]["TextSize"] = 14;
+G2L["23"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["23"]["TextScaled"] = true;
+G2L["23"]["BackgroundColor3"] = Color3.fromRGB(114, 83, 255);
+G2L["23"]["FontFace"] = Font.new([[rbxasset://fonts/families/FredokaOne.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["23"]["RichText"] = true;
+G2L["23"]["Size"] = UDim2.new(0.876, 0, 0.0625, 0);
+G2L["23"]["Name"] = [[exe button]];
+G2L["23"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["23"]["Text"] = [[Execute]];
+G2L["23"]["Position"] = UDim2.new(0.06, 0, 0.44494, 0);
+
+-- StarterGui.ScreenGui.excuter frame.exe button.LocalScript
+G2L["24"] = Instance.new("LocalScript", G2L["23"]);
+
+
+-- StarterGui.ScreenGui.excuter frame.exe button.UITextSizeConstraint
+G2L["25"] = Instance.new("UITextSizeConstraint", G2L["23"]);
+G2L["25"]["MaxTextSize"] = 42;
+
+-- StarterGui.ScreenGui.excuter frame.Clear
+G2L["26"] = Instance.new("TextButton", G2L["1a"]);
+G2L["26"]["TextWrapped"] = true;
+G2L["26"]["BorderSizePixel"] = 0;
+G2L["26"]["TextSize"] = 14;
+G2L["26"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["26"]["TextScaled"] = true;
+G2L["26"]["BackgroundColor3"] = Color3.fromRGB(123, 123, 123);
+G2L["26"]["FontFace"] = Font.new([[rbxasset://fonts/families/FredokaOne.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["26"]["RichText"] = true;
+G2L["26"]["Size"] = UDim2.new(0.876, 0, 0.0625, 0);
+G2L["26"]["Name"] = [[Clear]];
+G2L["26"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["26"]["Text"] = [[Clear]];
+G2L["26"]["Position"] = UDim2.new(0.06, 0, 0.52747, 0);
+
+-- StarterGui.ScreenGui.excuter frame.Clear.UICorner
+G2L["27"] = Instance.new("UICorner", G2L["26"]);
+
+
+-- StarterGui.ScreenGui.excuter frame.Clear.LocalScript
+G2L["28"] = Instance.new("LocalScript", G2L["26"]);
+
+
+-- StarterGui.ScreenGui.excuter frame.Clear.UITextSizeConstraint
+G2L["29"] = Instance.new("UITextSizeConstraint", G2L["26"]);
+G2L["29"]["MaxTextSize"] = 41;
+
+-- StarterGui.ScreenGui.excuter frame.TextLabel
+G2L["2a"] = Instance.new("TextLabel", G2L["1a"]);
+G2L["2a"]["TextWrapped"] = true;
+G2L["2a"]["BorderSizePixel"] = 0;
+G2L["2a"]["TextScaled"] = true;
+G2L["2a"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["2a"]["TextSize"] = 18;
+G2L["2a"]["FontFace"] = Font.new([[rbxasset://fonts/families/FredokaOne.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["2a"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["2a"]["BackgroundTransparency"] = 1;
+G2L["2a"]["Size"] = UDim2.new(0.8, 0, 0.0744, 0);
+G2L["2a"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["2a"]["Text"] = [[Script Editor]];
+G2L["2a"]["Position"] = UDim2.new(0.0253, 0, 0.37026, 0);
+
+-- StarterGui.ScreenGui.excuter frame.TextLabel.UITextSizeConstraint
+G2L["2b"] = Instance.new("UITextSizeConstraint", G2L["2a"]);
+G2L["2b"]["MaxTextSize"] = 18;
+
+-- StarterGui.ScreenGui.excuter frame.TextLabel.UIAspectRatioConstraint
+G2L["2c"] = Instance.new("UIAspectRatioConstraint", G2L["2a"]);
+G2L["2c"]["AspectRatio"] = 3.96246;
+
+-- StarterGui.ScreenGui.Console frame
+G2L["2d"] = Instance.new("Frame", G2L["1"]);
+G2L["2d"]["Visible"] = false;
+G2L["2d"]["BorderSizePixel"] = 0;
+G2L["2d"]["BackgroundColor3"] = Color3.fromRGB(78, 78, 78);
+G2L["2d"]["Size"] = UDim2.new(0.20695, 0, 1, 0);
+G2L["2d"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["2d"]["Name"] = [[Console frame]];
+
+-- StarterGui.ScreenGui.Console frame.ImageLabel
+G2L["2e"] = Instance.new("ImageLabel", G2L["2d"]);
+G2L["2e"]["BorderSizePixel"] = 0;
+G2L["2e"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["2e"]["Image"] = [[rbxassetid://13945092962]];
+G2L["2e"]["Size"] = UDim2.new(0.4, 0, 0.14881, 0);
+G2L["2e"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["2e"]["BackgroundTransparency"] = 1;
+G2L["2e"]["Position"] = UDim2.new(0.3, 0, 0.08631, 0);
+
+-- StarterGui.ScreenGui.Console frame.TextBox
+G2L["2f"] = Instance.new("TextBox", G2L["2d"]);
+G2L["2f"]["CursorPosition"] = -1;
+G2L["2f"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["2f"]["PlaceholderColor3"] = Color3.fromRGB(189, 189, 189);
+G2L["2f"]["BorderSizePixel"] = 0;
+G2L["2f"]["TextEditable"] = false;
+G2L["2f"]["TextXAlignment"] = Enum.TextXAlignment.Left;
+G2L["2f"]["TextWrapped"] = true;
+G2L["2f"]["TextTruncate"] = Enum.TextTruncate.AtEnd;
+G2L["2f"]["TextSize"] = 18;
+G2L["2f"]["TextYAlignment"] = Enum.TextYAlignment.Top;
+G2L["2f"]["TextScaled"] = true;
+G2L["2f"]["BackgroundColor3"] = Color3.fromRGB(53, 53, 53);
+G2L["2f"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["2f"]["RichText"] = true;
+G2L["2f"]["MultiLine"] = true;
+G2L["2f"]["ClearTextOnFocus"] = false;
+G2L["2f"]["ClipsDescendants"] = true;
+G2L["2f"]["Size"] = UDim2.new(3.876, 0, 1, 0);
+G2L["2f"]["Position"] = UDim2.new(1, 0, 0, 0);
+G2L["2f"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["2f"]["Text"] = [[]];
+G2L["2f"]["BackgroundTransparency"] = 0.25;
+
+-- StarterGui.ScreenGui.Console frame.TextBox.LocalScript
+G2L["30"] = Instance.new("LocalScript", G2L["2f"]);
+
+
+-- StarterGui.ScreenGui.Console frame.TextBox.UITextSizeConstraint
+G2L["31"] = Instance.new("UITextSizeConstraint", G2L["2f"]);
+G2L["31"]["MaxTextSize"] = 18;
+
+-- StarterGui.ScreenGui.Console frame.back button
+G2L["32"] = Instance.new("TextButton", G2L["2d"]);
+G2L["32"]["TextWrapped"] = true;
+G2L["32"]["BorderSizePixel"] = 0;
+G2L["32"]["TextSize"] = 14;
+G2L["32"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["32"]["TextScaled"] = true;
+G2L["32"]["BackgroundColor3"] = Color3.fromRGB(62, 62, 62);
+G2L["32"]["FontFace"] = Font.new([[rbxasset://fonts/families/FredokaOne.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["32"]["RichText"] = true;
+G2L["32"]["Size"] = UDim2.new(0.876, 0, 0.0625, 0);
+G2L["32"]["Name"] = [[back button]];
+G2L["32"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["32"]["Text"] = [[Back]];
+G2L["32"]["Position"] = UDim2.new(0.06, 0, 0.29315, 0);
+
+-- StarterGui.ScreenGui.Console frame.back button.UICorner
+G2L["33"] = Instance.new("UICorner", G2L["32"]);
+
+
+-- StarterGui.ScreenGui.Console frame.back button.LocalScript
+G2L["34"] = Instance.new("LocalScript", G2L["32"]);
+
+
+-- StarterGui.ScreenGui.Console frame.back button.LocalScript
+G2L["35"] = Instance.new("LocalScript", G2L["32"]);
+
+
+-- StarterGui.ScreenGui.Console frame.back button.UITextSizeConstraint
+G2L["36"] = Instance.new("UITextSizeConstraint", G2L["32"]);
+G2L["36"]["MaxTextSize"] = 42;
+
+-- StarterGui.ScreenGui.Console frame.TextLabel
+G2L["37"] = Instance.new("TextLabel", G2L["2d"]);
+G2L["37"]["TextWrapped"] = true;
+G2L["37"]["BorderSizePixel"] = 0;
+G2L["37"]["TextScaled"] = true;
+G2L["37"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["37"]["TextSize"] = 40;
+G2L["37"]["FontFace"] = Font.new([[rbxasset://fonts/families/FredokaOne.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["37"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["37"]["BackgroundTransparency"] = 1;
+G2L["37"]["Size"] = UDim2.new(-0.9, 0, 0.35417, 0);
+G2L["37"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["37"]["Text"] = [[This is still in beta we will add more options soon!]];
+G2L["37"]["Position"] = UDim2.new(0.936, 0, 0.4628, 0);
+
+-- StarterGui.ScreenGui.Console frame.TextLabel.UITextSizeConstraint
+G2L["38"] = Instance.new("UITextSizeConstraint", G2L["37"]);
+G2L["38"]["MaxTextSize"] = 40;
+
+-- StarterGui.ScreenGui.cloud frame
+G2L["39"] = Instance.new("Frame", G2L["1"]);
+G2L["39"]["Visible"] = false;
+G2L["39"]["BorderSizePixel"] = 0;
+G2L["39"]["BackgroundColor3"] = Color3.fromRGB(78, 78, 78);
+G2L["39"]["Size"] = UDim2.new(0.20695, 0, 1, 0);
+G2L["39"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["39"]["Name"] = [[cloud frame]];
+
+-- StarterGui.ScreenGui.cloud frame.ImageLabel
+G2L["3a"] = Instance.new("ImageLabel", G2L["39"]);
+G2L["3a"]["BorderSizePixel"] = 0;
+G2L["3a"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["3a"]["Image"] = [[rbxassetid://13945092962]];
+G2L["3a"]["Size"] = UDim2.new(0.4, 0, 0.14881, 0);
+G2L["3a"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["3a"]["BackgroundTransparency"] = 1;
+G2L["3a"]["Position"] = UDim2.new(0.3, 0, 0.08631, 0);
+
+-- StarterGui.ScreenGui.cloud frame.TextBox
+G2L["3b"] = Instance.new("TextBox", G2L["39"]);
+G2L["3b"]["CursorPosition"] = -1;
+G2L["3b"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["3b"]["PlaceholderColor3"] = Color3.fromRGB(189, 189, 189);
+G2L["3b"]["BorderSizePixel"] = 0;
+G2L["3b"]["TextXAlignment"] = Enum.TextXAlignment.Left;
+G2L["3b"]["TextWrapped"] = true;
+G2L["3b"]["TextTruncate"] = Enum.TextTruncate.AtEnd;
+G2L["3b"]["TextSize"] = 50;
+G2L["3b"]["TextYAlignment"] = Enum.TextYAlignment.Top;
+G2L["3b"]["TextScaled"] = true;
+G2L["3b"]["BackgroundColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["3b"]["FontFace"] = Font.new([[rbxasset://fonts/families/FredokaOne.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["3b"]["RichText"] = true;
+G2L["3b"]["MultiLine"] = true;
+G2L["3b"]["ClearTextOnFocus"] = false;
+G2L["3b"]["ClipsDescendants"] = true;
+G2L["3b"]["PlaceholderText"] = [[Search here]];
+G2L["3b"]["Size"] = UDim2.new(3.876, 0, 0.0744, 0);
+G2L["3b"]["Position"] = UDim2.new(1, 0, 0, 0);
+G2L["3b"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["3b"]["Text"] = [[]];
+G2L["3b"]["BackgroundTransparency"] = 0.25;
+
+-- StarterGui.ScreenGui.cloud frame.TextBox.LocalScript
+G2L["3c"] = Instance.new("LocalScript", G2L["3b"]);
+
+
+-- StarterGui.ScreenGui.cloud frame.TextBox.UITextSizeConstraint
+G2L["3d"] = Instance.new("UITextSizeConstraint", G2L["3b"]);
+G2L["3d"]["MaxTextSize"] = 50;
+
+-- StarterGui.ScreenGui.cloud frame.back button
+G2L["3e"] = Instance.new("TextButton", G2L["39"]);
+G2L["3e"]["TextWrapped"] = true;
+G2L["3e"]["BorderSizePixel"] = 0;
+G2L["3e"]["TextSize"] = 14;
+G2L["3e"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["3e"]["TextScaled"] = true;
+G2L["3e"]["BackgroundColor3"] = Color3.fromRGB(62, 62, 62);
+G2L["3e"]["FontFace"] = Font.new([[rbxasset://fonts/families/FredokaOne.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["3e"]["RichText"] = true;
+G2L["3e"]["Size"] = UDim2.new(0.876, 0, 0.0625, 0);
+G2L["3e"]["Name"] = [[back button]];
+G2L["3e"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["3e"]["Text"] = [[Back]];
+G2L["3e"]["Position"] = UDim2.new(0.06, 0, 0.29315, 0);
+
+-- StarterGui.ScreenGui.cloud frame.back button.UICorner
+G2L["3f"] = Instance.new("UICorner", G2L["3e"]);
+
+
+-- StarterGui.ScreenGui.cloud frame.back button.LocalScript
+G2L["40"] = Instance.new("LocalScript", G2L["3e"]);
+
+
+-- StarterGui.ScreenGui.cloud frame.back button.LocalScript
+G2L["41"] = Instance.new("LocalScript", G2L["3e"]);
+
+
+-- StarterGui.ScreenGui.cloud frame.back button.UITextSizeConstraint
+G2L["42"] = Instance.new("UITextSizeConstraint", G2L["3e"]);
+G2L["42"]["MaxTextSize"] = 42;
+
+-- StarterGui.ScreenGui.cloud frame.TextLabel
+G2L["43"] = Instance.new("TextLabel", G2L["39"]);
+G2L["43"]["TextWrapped"] = true;
+G2L["43"]["BorderSizePixel"] = 0;
+G2L["43"]["TextScaled"] = true;
+G2L["43"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["43"]["TextSize"] = 40;
+G2L["43"]["FontFace"] = Font.new([[rbxasset://fonts/families/FredokaOne.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["43"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["43"]["BackgroundTransparency"] = 1;
+G2L["43"]["Size"] = UDim2.new(-0.9, 0, 0.35417, 0);
+G2L["43"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["43"]["Text"] = [[This is still in beta we will add more options soon!]];
+G2L["43"]["Position"] = UDim2.new(0.936, 0, 0.4628, 0);
+
+-- StarterGui.ScreenGui.cloud frame.TextLabel.UITextSizeConstraint
+G2L["44"] = Instance.new("UITextSizeConstraint", G2L["43"]);
+G2L["44"]["MaxTextSize"] = 40;
+
+-- StarterGui.ScreenGui.cloud frame.ScrollingFrame
+G2L["45"] = Instance.new("ScrollingFrame", G2L["39"]);
+G2L["45"]["Active"] = true;
+G2L["45"]["BorderSizePixel"] = 0;
+G2L["45"]["BackgroundColor3"] = Color3.fromRGB(72, 72, 72);
+G2L["45"]["Size"] = UDim2.new(3.872, 0, 0.9256, 0);
+G2L["45"]["ScrollBarImageColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["45"]["Position"] = UDim2.new(1.004, 0, 0.0744, 0);
+G2L["45"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["45"]["BackgroundTransparency"] = 0.2;
+
+-- StarterGui.ScreenGui.cloud frame.ScrollingFrame.TextButton
+G2L["46"] = Instance.new("TextButton", G2L["45"]);
+G2L["46"]["TextWrapped"] = true;
+G2L["46"]["BorderSizePixel"] = 0;
+G2L["46"]["TextXAlignment"] = Enum.TextXAlignment.Left;
+G2L["46"]["TextStrokeColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["46"]["TextSize"] = 30;
+G2L["46"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["46"]["TextYAlignment"] = Enum.TextYAlignment.Bottom;
+G2L["46"]["TextScaled"] = true;
+G2L["46"]["BackgroundColor3"] = Color3.fromRGB(84, 84, 84);
+G2L["46"]["FontFace"] = Font.new([[rbxasset://fonts/families/FredokaOne.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["46"]["Size"] = UDim2.new(0, 317, 0, 188);
+G2L["46"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["46"]["Visible"] = false;
+G2L["46"]["Position"] = UDim2.new(0.65289, 0, 0.02565, 0);
+
+-- StarterGui.ScreenGui.cloud frame.ScrollingFrame.TextButton.UICorner
+G2L["47"] = Instance.new("UICorner", G2L["46"]);
+
+
+-- StarterGui.ScreenGui.cloud frame.ScrollingFrame.TextButton.ImageLabel
+G2L["48"] = Instance.new("ImageLabel", G2L["46"]);
+G2L["48"]["BorderSizePixel"] = 0;
+G2L["48"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["48"]["Image"] = [[rbxasset://textures/ui/GuiImagePlaceholder.png]];
+G2L["48"]["Size"] = UDim2.new(0, 316, 0, 157);
+G2L["48"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["48"]["Position"] = UDim2.new(0.00315, 0, 0, 0);
+
+-- StarterGui.ScreenGui.cloud frame.ScrollingFrame.TextButton.UITextSizeConstraint
+G2L["49"] = Instance.new("UITextSizeConstraint", G2L["46"]);
+G2L["49"]["MaxTextSize"] = 30;
+
+-- StarterGui.ScreenGui.cloud frame.ScrollingFrame.TextButton
+G2L["4a"] = Instance.new("TextButton", G2L["45"]);
+G2L["4a"]["TextWrapped"] = true;
+G2L["4a"]["BorderSizePixel"] = 0;
+G2L["4a"]["TextXAlignment"] = Enum.TextXAlignment.Left;
+G2L["4a"]["TextStrokeColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["4a"]["TextSize"] = 30;
+G2L["4a"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["4a"]["TextYAlignment"] = Enum.TextYAlignment.Bottom;
+G2L["4a"]["TextScaled"] = true;
+G2L["4a"]["BackgroundColor3"] = Color3.fromRGB(84, 84, 84);
+G2L["4a"]["FontFace"] = Font.new([[rbxasset://fonts/families/FredokaOne.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["4a"]["Size"] = UDim2.new(0, 317, 0, 188);
+G2L["4a"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["4a"]["Visible"] = false;
+G2L["4a"]["Position"] = UDim2.new(0.31198, 0, 0.02462, 0);
+
+-- StarterGui.ScreenGui.cloud frame.ScrollingFrame.TextButton.UICorner
+G2L["4b"] = Instance.new("UICorner", G2L["4a"]);
+
+
+-- StarterGui.ScreenGui.cloud frame.ScrollingFrame.TextButton.ImageLabel
+G2L["4c"] = Instance.new("ImageLabel", G2L["4a"]);
+G2L["4c"]["BorderSizePixel"] = 0;
+G2L["4c"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["4c"]["Image"] = [[rbxasset://textures/ui/GuiImagePlaceholder.png]];
+G2L["4c"]["Size"] = UDim2.new(0, 316, 0, 157);
+G2L["4c"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["4c"]["Position"] = UDim2.new(0.00315, 0, 0, 0);
+
+-- StarterGui.ScreenGui.cloud frame.ScrollingFrame.TextButton.UITextSizeConstraint
+G2L["4d"] = Instance.new("UITextSizeConstraint", G2L["4a"]);
+G2L["4d"]["MaxTextSize"] = 30;
+
+-- StarterGui.ScreenGui.cloud frame.ScrollingFrame.TextButton
+G2L["4e"] = Instance.new("TextButton", G2L["45"]);
+G2L["4e"]["TextWrapped"] = true;
+G2L["4e"]["BorderSizePixel"] = 0;
+G2L["4e"]["TextXAlignment"] = Enum.TextXAlignment.Left;
+G2L["4e"]["TextStrokeColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["4e"]["TextSize"] = 30;
+G2L["4e"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["4e"]["TextYAlignment"] = Enum.TextYAlignment.Bottom;
+G2L["4e"]["TextScaled"] = true;
+G2L["4e"]["BackgroundColor3"] = Color3.fromRGB(84, 84, 84);
+G2L["4e"]["FontFace"] = Font.new([[rbxasset://fonts/families/FredokaOne.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["4e"]["Size"] = UDim2.new(0, 317, 0, 188);
+G2L["4e"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["4e"]["Visible"] = false;
+G2L["4e"]["Position"] = UDim2.new(-0.02996, 0, 0.02291, 0);
+
+-- StarterGui.ScreenGui.cloud frame.ScrollingFrame.TextButton.UICorner
+G2L["4f"] = Instance.new("UICorner", G2L["4e"]);
+
+
+-- StarterGui.ScreenGui.cloud frame.ScrollingFrame.TextButton.ImageLabel
+G2L["50"] = Instance.new("ImageLabel", G2L["4e"]);
+G2L["50"]["BorderSizePixel"] = 0;
+G2L["50"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["50"]["Image"] = [[rbxasset://textures/ui/GuiImagePlaceholder.png]];
+G2L["50"]["Size"] = UDim2.new(0, 316, 0, 157);
+G2L["50"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["50"]["Position"] = UDim2.new(0.00315, 0, 0, 0);
+
+-- StarterGui.ScreenGui.cloud frame.ScrollingFrame.TextButton.UITextSizeConstraint
+G2L["51"] = Instance.new("UITextSizeConstraint", G2L["4e"]);
+G2L["51"]["MaxTextSize"] = 30;
+
+-- StarterGui.ScreenGui.cloud frame.ScrollingFrame.TextButton
+G2L["52"] = Instance.new("TextButton", G2L["45"]);
+G2L["52"]["TextWrapped"] = true;
+G2L["52"]["BorderSizePixel"] = 0;
+G2L["52"]["TextXAlignment"] = Enum.TextXAlignment.Left;
+G2L["52"]["TextStrokeColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["52"]["TextSize"] = 30;
+G2L["52"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["52"]["TextYAlignment"] = Enum.TextYAlignment.Bottom;
+G2L["52"]["TextScaled"] = true;
+G2L["52"]["BackgroundColor3"] = Color3.fromRGB(84, 84, 84);
+G2L["52"]["FontFace"] = Font.new([[rbxasset://fonts/families/FredokaOne.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["52"]["Size"] = UDim2.new(0, 317, 0, 188);
+G2L["52"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["52"]["Visible"] = false;
+G2L["52"]["Position"] = UDim2.new(0.65393, 0, 0.19208, 0);
+
+-- StarterGui.ScreenGui.cloud frame.ScrollingFrame.TextButton.UICorner
+G2L["53"] = Instance.new("UICorner", G2L["52"]);
+
+
+-- StarterGui.ScreenGui.cloud frame.ScrollingFrame.TextButton.ImageLabel
+G2L["54"] = Instance.new("ImageLabel", G2L["52"]);
+G2L["54"]["BorderSizePixel"] = 0;
+G2L["54"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["54"]["Image"] = [[rbxasset://textures/ui/GuiImagePlaceholder.png]];
+G2L["54"]["Size"] = UDim2.new(0, 316, 0, 157);
+G2L["54"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["54"]["Position"] = UDim2.new(0.00315, 0, 0, 0);
+
+-- StarterGui.ScreenGui.cloud frame.ScrollingFrame.TextButton.UITextSizeConstraint
+G2L["55"] = Instance.new("UITextSizeConstraint", G2L["52"]);
+G2L["55"]["MaxTextSize"] = 30;
+
+-- StarterGui.ScreenGui.cloud frame.ScrollingFrame.TextButton
+G2L["56"] = Instance.new("TextButton", G2L["45"]);
+G2L["56"]["TextWrapped"] = true;
+G2L["56"]["BorderSizePixel"] = 0;
+G2L["56"]["TextXAlignment"] = Enum.TextXAlignment.Left;
+G2L["56"]["TextStrokeColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["56"]["TextSize"] = 30;
+G2L["56"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["56"]["TextYAlignment"] = Enum.TextYAlignment.Bottom;
+G2L["56"]["TextScaled"] = true;
+G2L["56"]["BackgroundColor3"] = Color3.fromRGB(84, 84, 84);
+G2L["56"]["FontFace"] = Font.new([[rbxasset://fonts/families/FredokaOne.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["56"]["Size"] = UDim2.new(0, 317, 0, 188);
+G2L["56"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["56"]["Visible"] = false;
+G2L["56"]["Position"] = UDim2.new(0.31302, 0, 0.18985, 0);
+
+-- StarterGui.ScreenGui.cloud frame.ScrollingFrame.TextButton.UICorner
+G2L["57"] = Instance.new("UICorner", G2L["56"]);
+
+
+-- StarterGui.ScreenGui.cloud frame.ScrollingFrame.TextButton.ImageLabel
+G2L["58"] = Instance.new("ImageLabel", G2L["56"]);
+G2L["58"]["BorderSizePixel"] = 0;
+G2L["58"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["58"]["Image"] = [[rbxasset://textures/ui/GuiImagePlaceholder.png]];
+G2L["58"]["Size"] = UDim2.new(0, 316, 0, 157);
+G2L["58"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["58"]["Position"] = UDim2.new(0.00315, 0, 0, 0);
+
+-- StarterGui.ScreenGui.cloud frame.ScrollingFrame.TextButton.UITextSizeConstraint
+G2L["59"] = Instance.new("UITextSizeConstraint", G2L["56"]);
+G2L["59"]["MaxTextSize"] = 30;
+
+-- StarterGui.ScreenGui.cloud frame.ScrollingFrame.TextButton
+G2L["5a"] = Instance.new("TextButton", G2L["45"]);
+G2L["5a"]["TextWrapped"] = true;
+G2L["5a"]["BorderSizePixel"] = 0;
+G2L["5a"]["TextXAlignment"] = Enum.TextXAlignment.Left;
+G2L["5a"]["TextStrokeColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["5a"]["TextSize"] = 30;
+G2L["5a"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["5a"]["TextYAlignment"] = Enum.TextYAlignment.Bottom;
+G2L["5a"]["TextScaled"] = true;
+G2L["5a"]["BackgroundColor3"] = Color3.fromRGB(84, 84, 84);
+G2L["5a"]["FontFace"] = Font.new([[rbxasset://fonts/families/FredokaOne.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["5a"]["Size"] = UDim2.new(0, 317, 0, 188);
+G2L["5a"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["5a"]["Visible"] = false;
+G2L["5a"]["Position"] = UDim2.new(-0.02893, 0, 0.18615, 0);
+
+-- StarterGui.ScreenGui.cloud frame.ScrollingFrame.TextButton.UICorner
+G2L["5b"] = Instance.new("UICorner", G2L["5a"]);
+
+
+-- StarterGui.ScreenGui.cloud frame.ScrollingFrame.TextButton.ImageLabel
+G2L["5c"] = Instance.new("ImageLabel", G2L["5a"]);
+G2L["5c"]["BorderSizePixel"] = 0;
+G2L["5c"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["5c"]["Image"] = [[rbxasset://textures/ui/GuiImagePlaceholder.png]];
+G2L["5c"]["Size"] = UDim2.new(0, 316, 0, 157);
+G2L["5c"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["5c"]["Position"] = UDim2.new(0.00315, 0, 0, 0);
+
+-- StarterGui.ScreenGui.cloud frame.ScrollingFrame.TextButton.UITextSizeConstraint
+G2L["5d"] = Instance.new("UITextSizeConstraint", G2L["5a"]);
+G2L["5d"]["MaxTextSize"] = 30;
+
+-- StarterGui.ScreenGui.cloud frame.ScrollingFrame.TextButton
+G2L["5e"] = Instance.new("TextButton", G2L["45"]);
+G2L["5e"]["TextWrapped"] = true;
+G2L["5e"]["BorderSizePixel"] = 0;
+G2L["5e"]["TextXAlignment"] = Enum.TextXAlignment.Left;
+G2L["5e"]["TextStrokeColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["5e"]["TextSize"] = 30;
+G2L["5e"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["5e"]["TextYAlignment"] = Enum.TextYAlignment.Bottom;
+G2L["5e"]["TextScaled"] = true;
+G2L["5e"]["BackgroundColor3"] = Color3.fromRGB(84, 84, 84);
+G2L["5e"]["FontFace"] = Font.new([[rbxasset://fonts/families/FredokaOne.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["5e"]["Size"] = UDim2.new(0, 317, 0, 188);
+G2L["5e"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["5e"]["Visible"] = false;
+G2L["5e"]["Position"] = UDim2.new(0.30579, 0, 0.34752, 0);
+
+-- StarterGui.ScreenGui.cloud frame.ScrollingFrame.TextButton.UICorner
+G2L["5f"] = Instance.new("UICorner", G2L["5e"]);
+
+
+-- StarterGui.ScreenGui.cloud frame.ScrollingFrame.TextButton.ImageLabel
+G2L["60"] = Instance.new("ImageLabel", G2L["5e"]);
+G2L["60"]["BorderSizePixel"] = 0;
+G2L["60"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["60"]["Image"] = [[rbxasset://textures/ui/GuiImagePlaceholder.png]];
+G2L["60"]["Size"] = UDim2.new(0.99685, 0, 0.83511, 0);
+G2L["60"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["60"]["Position"] = UDim2.new(0.00315, 0, 0, 0);
+
+-- StarterGui.ScreenGui.cloud frame.ScrollingFrame.TextButton.UITextSizeConstraint
+G2L["61"] = Instance.new("UITextSizeConstraint", G2L["5e"]);
+G2L["61"]["MaxTextSize"] = 30;
+
+-- StarterGui.ScreenGui.cloud frame.ScrollingFrame.TextButton
+G2L["62"] = Instance.new("TextButton", G2L["45"]);
+G2L["62"]["TextWrapped"] = true;
+G2L["62"]["BorderSizePixel"] = 0;
+G2L["62"]["TextXAlignment"] = Enum.TextXAlignment.Left;
+G2L["62"]["TextStrokeColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["62"]["TextSize"] = 30;
+G2L["62"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["62"]["TextYAlignment"] = Enum.TextYAlignment.Bottom;
+G2L["62"]["TextScaled"] = true;
+G2L["62"]["BackgroundColor3"] = Color3.fromRGB(84, 84, 84);
+G2L["62"]["FontFace"] = Font.new([[rbxasset://fonts/families/FredokaOne.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["62"]["Size"] = UDim2.new(0, 317, 0, 188);
+G2L["62"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["62"]["Visible"] = false;
+G2L["62"]["Position"] = UDim2.new(-0.03616, 0, 0.33954, 0);
+
+-- StarterGui.ScreenGui.cloud frame.ScrollingFrame.TextButton.UICorner
+G2L["63"] = Instance.new("UICorner", G2L["62"]);
+
+
+-- StarterGui.ScreenGui.cloud frame.ScrollingFrame.TextButton.ImageLabel
+G2L["64"] = Instance.new("ImageLabel", G2L["62"]);
+G2L["64"]["BorderSizePixel"] = 0;
+G2L["64"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["64"]["Image"] = [[rbxasset://textures/ui/GuiImagePlaceholder.png]];
+G2L["64"]["Size"] = UDim2.new(0, 316, 0, 157);
+G2L["64"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["64"]["Position"] = UDim2.new(0.00315, 0, 0, 0);
+
+-- StarterGui.ScreenGui.cloud frame.ScrollingFrame.TextButton.UITextSizeConstraint
+G2L["65"] = Instance.new("UITextSizeConstraint", G2L["62"]);
+G2L["65"]["MaxTextSize"] = 30;
+
+-- StarterGui.ScreenGui.cloud frame.ScrollingFrame.TextButton
+G2L["66"] = Instance.new("TextButton", G2L["45"]);
+G2L["66"]["TextWrapped"] = true;
+G2L["66"]["BorderSizePixel"] = 0;
+G2L["66"]["TextXAlignment"] = Enum.TextXAlignment.Left;
+G2L["66"]["TextStrokeColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["66"]["TextSize"] = 30;
+G2L["66"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["66"]["TextYAlignment"] = Enum.TextYAlignment.Bottom;
+G2L["66"]["TextScaled"] = true;
+G2L["66"]["BackgroundColor3"] = Color3.fromRGB(84, 84, 84);
+G2L["66"]["FontFace"] = Font.new([[rbxasset://fonts/families/FredokaOne.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["66"]["Size"] = UDim2.new(0, 317, 0, 188);
+G2L["66"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["66"]["Visible"] = false;
+G2L["66"]["Position"] = UDim2.new(0.64669, 0, 0.35234, 0);
+
+-- StarterGui.ScreenGui.cloud frame.ScrollingFrame.TextButton.UICorner
+G2L["67"] = Instance.new("UICorner", G2L["66"]);
+
+
+-- StarterGui.ScreenGui.cloud frame.ScrollingFrame.TextButton.ImageLabel
+G2L["68"] = Instance.new("ImageLabel", G2L["66"]);
+G2L["68"]["BorderSizePixel"] = 0;
+G2L["68"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["68"]["Image"] = [[rbxasset://textures/ui/GuiImagePlaceholder.png]];
+G2L["68"]["Size"] = UDim2.new(0, 316, 0, 157);
+G2L["68"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["68"]["Position"] = UDim2.new(0.00315, 0, 0, 0);
+
+-- StarterGui.ScreenGui.cloud frame.ScrollingFrame.TextButton.UITextSizeConstraint
+G2L["69"] = Instance.new("UITextSizeConstraint", G2L["66"]);
+G2L["69"]["MaxTextSize"] = 30;
+
+-- StarterGui.ScreenGui.Credits frame
+G2L["6a"] = Instance.new("Frame", G2L["1"]);
+G2L["6a"]["Visible"] = false;
+G2L["6a"]["BorderSizePixel"] = 0;
+G2L["6a"]["BackgroundColor3"] = Color3.fromRGB(78, 78, 78);
+G2L["6a"]["Size"] = UDim2.new(0.20695, 0, 1, 0);
+G2L["6a"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["6a"]["Name"] = [[Credits frame]];
+
+-- StarterGui.ScreenGui.Credits frame.ImageLabel
+G2L["6b"] = Instance.new("ImageLabel", G2L["6a"]);
+G2L["6b"]["BorderSizePixel"] = 0;
+G2L["6b"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["6b"]["Image"] = [[rbxassetid://13945092962]];
+G2L["6b"]["Size"] = UDim2.new(0.4, 0, 0.14881, 0);
+G2L["6b"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["6b"]["BackgroundTransparency"] = 1;
+G2L["6b"]["Position"] = UDim2.new(0.3, 0, 0.08631, 0);
+
+-- StarterGui.ScreenGui.Credits frame.ImageLabel.UIAspectRatioConstraint
+G2L["6c"] = Instance.new("UIAspectRatioConstraint", G2L["6b"]);
+
+
+-- StarterGui.ScreenGui.Credits frame.back button
+G2L["6d"] = Instance.new("TextButton", G2L["6a"]);
+G2L["6d"]["TextWrapped"] = true;
+G2L["6d"]["BorderSizePixel"] = 0;
+G2L["6d"]["TextSize"] = 14;
+G2L["6d"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["6d"]["TextScaled"] = true;
+G2L["6d"]["BackgroundColor3"] = Color3.fromRGB(62, 62, 62);
+G2L["6d"]["FontFace"] = Font.new([[rbxasset://fonts/families/FredokaOne.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["6d"]["RichText"] = true;
+G2L["6d"]["Size"] = UDim2.new(0.876, 0, 0.0625, 0);
+G2L["6d"]["Name"] = [[back button]];
+G2L["6d"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["6d"]["Text"] = [[Back]];
+G2L["6d"]["Position"] = UDim2.new(0.06, 0, 0.29315, 0);
+
+-- StarterGui.ScreenGui.Credits frame.back button.UICorner
+G2L["6e"] = Instance.new("UICorner", G2L["6d"]);
+
+
+-- StarterGui.ScreenGui.Credits frame.back button.LocalScript
+G2L["6f"] = Instance.new("LocalScript", G2L["6d"]);
+
+
+-- StarterGui.ScreenGui.Credits frame.back button.LocalScript
+G2L["70"] = Instance.new("LocalScript", G2L["6d"]);
+
+
+-- StarterGui.ScreenGui.Credits frame.back button.UITextSizeConstraint
+G2L["71"] = Instance.new("UITextSizeConstraint", G2L["6d"]);
+G2L["71"]["MaxTextSize"] = 42;
+
+-- StarterGui.ScreenGui.Credits frame.back button.UIAspectRatioConstraint
+G2L["72"] = Instance.new("UIAspectRatioConstraint", G2L["6d"]);
+G2L["72"]["AspectRatio"] = 5.21429;
+
+-- StarterGui.ScreenGui.Credits frame.Frame
+G2L["73"] = Instance.new("Frame", G2L["6a"]);
+G2L["73"]["BorderSizePixel"] = 0;
+G2L["73"]["BackgroundColor3"] = Color3.fromRGB(53, 53, 53);
+G2L["73"]["Size"] = UDim2.new(3.832, 0, 1, 0);
+G2L["73"]["Position"] = UDim2.new(1, 0, 0, 0);
+G2L["73"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["73"]["BackgroundTransparency"] = 0.1;
+
+-- StarterGui.ScreenGui.Credits frame.Frame.UIAspectRatioConstraint
+G2L["74"] = Instance.new("UIAspectRatioConstraint", G2L["73"]);
+G2L["74"]["AspectRatio"] = 1.4256;
+
+-- StarterGui.ScreenGui.Credits frame.Frame
+G2L["75"] = Instance.new("Frame", G2L["6a"]);
+G2L["75"]["BorderSizePixel"] = 0;
+G2L["75"]["BackgroundColor3"] = Color3.fromRGB(77, 77, 77);
+G2L["75"]["Size"] = UDim2.new(2.08741, 0, 0.57857, 0);
+G2L["75"]["Position"] = UDim2.new(1.977, 0, 0.24439, 0);
+G2L["75"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+
+-- StarterGui.ScreenGui.Credits frame.Frame.ImageLabel
+G2L["76"] = Instance.new("ImageLabel", G2L["75"]);
+G2L["76"]["BorderSizePixel"] = 0;
+G2L["76"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["76"]["Image"] = [[rbxassetid://78432144536547]];
+G2L["76"]["Size"] = UDim2.new(0.21719, 0, 0.32547, 0);
+G2L["76"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["76"]["Position"] = UDim2.new(0, 0, 0.67368, 0);
+
+-- StarterGui.ScreenGui.Credits frame.Frame.ImageLabel.UIAspectRatioConstraint
+G2L["77"] = Instance.new("UIAspectRatioConstraint", G2L["76"]);
+G2L["77"]["AspectRatio"] = 1.00725;
+
+-- StarterGui.ScreenGui.Credits frame.Frame.TextLabel
+G2L["78"] = Instance.new("TextLabel", G2L["75"]);
+G2L["78"]["TextWrapped"] = true;
+G2L["78"]["BorderSizePixel"] = 0;
+G2L["78"]["TextScaled"] = true;
+G2L["78"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["78"]["TextSize"] = 40;
+G2L["78"]["FontFace"] = Font.new([[rbxasset://fonts/families/LuckiestGuy.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["78"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["78"]["BackgroundTransparency"] = 1;
+G2L["78"]["Size"] = UDim2.new(0.3125, 0, 0.11792, 0);
+G2L["78"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["78"]["Text"] = [[UI DEV & owner of Bytrex]];
+G2L["78"]["Position"] = UDim2.new(0.2154, 0, 0.88136, 0);
+
+-- StarterGui.ScreenGui.Credits frame.Frame.TextLabel.UITextSizeConstraint
+G2L["79"] = Instance.new("UITextSizeConstraint", G2L["78"]);
+G2L["79"]["MaxTextSize"] = 40;
+
+-- StarterGui.ScreenGui.Credits frame.Frame.TextLabel.UIAspectRatioConstraint
+G2L["7a"] = Instance.new("UIAspectRatioConstraint", G2L["78"]);
+G2L["7a"]["AspectRatio"] = 4;
+
+-- StarterGui.ScreenGui.Credits frame.Frame.TextLabel
+G2L["7b"] = Instance.new("TextLabel", G2L["75"]);
+G2L["7b"]["TextWrapped"] = true;
+G2L["7b"]["BorderSizePixel"] = 0;
+G2L["7b"]["TextScaled"] = true;
+G2L["7b"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["7b"]["TextSize"] = 40;
+G2L["7b"]["FontFace"] = Font.new([[rbxasset://fonts/families/LuckiestGuy.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["7b"]["TextColor3"] = Color3.fromRGB(101, 27, 133);
+G2L["7b"]["BackgroundTransparency"] = 1;
+G2L["7b"]["Size"] = UDim2.new(0.3125, 0, 0.11792, 0);
+G2L["7b"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["7b"]["Text"] = [[Blitz]];
+G2L["7b"]["Position"] = UDim2.new(0.17897, 0, 0.77687, 0);
+
+-- StarterGui.ScreenGui.Credits frame.Frame.TextLabel.UITextSizeConstraint
+G2L["7c"] = Instance.new("UITextSizeConstraint", G2L["7b"]);
+G2L["7c"]["MaxTextSize"] = 40;
+
+-- StarterGui.ScreenGui.Credits frame.Frame.TextLabel.UIAspectRatioConstraint
+G2L["7d"] = Instance.new("UIAspectRatioConstraint", G2L["7b"]);
+G2L["7d"]["AspectRatio"] = 4;
+
+-- StarterGui.ScreenGui.Credits frame.Frame.ImageLabel
+G2L["7e"] = Instance.new("ImageLabel", G2L["75"]);
+G2L["7e"]["BorderSizePixel"] = 0;
+G2L["7e"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["7e"]["Image"] = [[rbxassetid://76647484620400]];
+G2L["7e"]["Size"] = UDim2.new(0.21719, 0, 0.29245, 0);
+G2L["7e"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["7e"]["Position"] = UDim2.new(-0.00095, 0, -0.00011, 0);
+
+-- StarterGui.ScreenGui.Credits frame.Frame.ImageLabel.UIAspectRatioConstraint
+G2L["7f"] = Instance.new("UIAspectRatioConstraint", G2L["7e"]);
+G2L["7f"]["AspectRatio"] = 1.12097;
+
+-- StarterGui.ScreenGui.Credits frame.Frame.TextLabel
+G2L["80"] = Instance.new("TextLabel", G2L["75"]);
+G2L["80"]["TextWrapped"] = true;
+G2L["80"]["BorderSizePixel"] = 0;
+G2L["80"]["TextScaled"] = true;
+G2L["80"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["80"]["TextSize"] = 35;
+G2L["80"]["FontFace"] = Font.new([[rbxasset://fonts/families/LuckiestGuy.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["80"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["80"]["BackgroundTransparency"] = 1;
+G2L["80"]["Size"] = UDim2.new(0.3125, 0, 0.11792, 0);
+G2L["80"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["80"]["Text"] = [[owner of FellprogramP2 ]];
+G2L["80"]["Position"] = UDim2.new(0.24534, 0, 0.17381, 0);
+
+-- StarterGui.ScreenGui.Credits frame.Frame.TextLabel.UITextSizeConstraint
+G2L["81"] = Instance.new("UITextSizeConstraint", G2L["80"]);
+G2L["81"]["MaxTextSize"] = 35;
+
+-- StarterGui.ScreenGui.Credits frame.Frame.TextLabel.UIAspectRatioConstraint
+G2L["82"] = Instance.new("UIAspectRatioConstraint", G2L["80"]);
+G2L["82"]["AspectRatio"] = 4;
+
+-- StarterGui.ScreenGui.Credits frame.Frame.TextLabel
+G2L["83"] = Instance.new("TextLabel", G2L["75"]);
+G2L["83"]["TextWrapped"] = true;
+G2L["83"]["BorderSizePixel"] = 0;
+G2L["83"]["TextScaled"] = true;
+G2L["83"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["83"]["TextSize"] = 40;
+G2L["83"]["FontFace"] = Font.new([[rbxasset://fonts/families/LuckiestGuy.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["83"]["TextColor3"] = Color3.fromRGB(133, 0, 3);
+G2L["83"]["BackgroundTransparency"] = 1;
+G2L["83"]["Size"] = UDim2.new(0.3125, 0, 0.11792, 0);
+G2L["83"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["83"]["Text"] = [[Felica]];
+G2L["83"]["Position"] = UDim2.new(0.17905, 0, 0.01272, 0);
+
+-- StarterGui.ScreenGui.Credits frame.Frame.TextLabel.UITextSizeConstraint
+G2L["84"] = Instance.new("UITextSizeConstraint", G2L["83"]);
+G2L["84"]["MaxTextSize"] = 40;
+
+-- StarterGui.ScreenGui.Credits frame.Frame.TextLabel.UIAspectRatioConstraint
+G2L["85"] = Instance.new("UIAspectRatioConstraint", G2L["83"]);
+G2L["85"]["AspectRatio"] = 4;
+
+-- StarterGui.ScreenGui.Credits frame.Frame.TextLabel
+G2L["86"] = Instance.new("TextLabel", G2L["75"]);
+G2L["86"]["TextWrapped"] = true;
+G2L["86"]["BorderSizePixel"] = 0;
+G2L["86"]["TextScaled"] = true;
+G2L["86"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["86"]["TextSize"] = 40;
+G2L["86"]["FontFace"] = Font.new([[rbxasset://fonts/families/LuckiestGuy.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["86"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["86"]["BackgroundTransparency"] = 1;
+G2L["86"]["Size"] = UDim2.new(0.3125, 0, 0.11792, 0);
+G2L["86"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["86"]["Text"] = [[Main dev & likes pink]];
+G2L["86"]["Position"] = UDim2.new(0.2171, 0, 0.55193, 0);
+
+-- StarterGui.ScreenGui.Credits frame.Frame.TextLabel.UITextSizeConstraint
+G2L["87"] = Instance.new("UITextSizeConstraint", G2L["86"]);
+G2L["87"]["MaxTextSize"] = 40;
+
+-- StarterGui.ScreenGui.Credits frame.Frame.TextLabel.UIAspectRatioConstraint
+G2L["88"] = Instance.new("UIAspectRatioConstraint", G2L["86"]);
+G2L["88"]["AspectRatio"] = 4;
+
+-- StarterGui.ScreenGui.Credits frame.Frame.TextLabel
+G2L["89"] = Instance.new("TextLabel", G2L["75"]);
+G2L["89"]["TextWrapped"] = true;
+G2L["89"]["BorderSizePixel"] = 0;
+G2L["89"]["TextScaled"] = true;
+G2L["89"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["89"]["TextSize"] = 40;
+G2L["89"]["FontFace"] = Font.new([[rbxasset://fonts/families/LuckiestGuy.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["89"]["TextColor3"] = Color3.fromRGB(225, 50, 255);
+G2L["89"]["BackgroundTransparency"] = 1;
+G2L["89"]["Size"] = UDim2.new(0.3125, 0, 0.11792, 0);
+G2L["89"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["89"]["Text"] = [[Binary]];
+G2L["89"]["Position"] = UDim2.new(0.17799, 0, 0.38223, 0);
+
+-- StarterGui.ScreenGui.Credits frame.Frame.TextLabel.UITextSizeConstraint
+G2L["8a"] = Instance.new("UITextSizeConstraint", G2L["89"]);
+G2L["8a"]["MaxTextSize"] = 40;
+
+-- StarterGui.ScreenGui.Credits frame.Frame.TextLabel.UIAspectRatioConstraint
+G2L["8b"] = Instance.new("UIAspectRatioConstraint", G2L["89"]);
+G2L["8b"]["AspectRatio"] = 4;
+
+-- StarterGui.ScreenGui.Credits frame.Frame.UIAspectRatioConstraint
+G2L["8c"] = Instance.new("UIAspectRatioConstraint", G2L["75"]);
+G2L["8c"]["AspectRatio"] = 1.50943;
+
+-- StarterGui.ScreenGui.Credits frame.TextLabel
+G2L["8d"] = Instance.new("TextLabel", G2L["6a"]);
+G2L["8d"]["TextWrapped"] = true;
+G2L["8d"]["BorderSizePixel"] = 0;
+G2L["8d"]["TextScaled"] = true;
+G2L["8d"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["8d"]["TextSize"] = 40;
+G2L["8d"]["FontFace"] = Font.new([[rbxasset://fonts/families/FredokaOne.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["8d"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["8d"]["BackgroundTransparency"] = 1;
+G2L["8d"]["Size"] = UDim2.new(-0.9, 0, 0.37798, 0);
+G2L["8d"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["8d"]["Text"] = [[Credits to these people for making the best executor in  the world!]];
+G2L["8d"]["Position"] = UDim2.new(0.948, 0, 0.74107, 0);
+
+-- StarterGui.ScreenGui.Credits frame.TextLabel.UITextSizeConstraint
+G2L["8e"] = Instance.new("UITextSizeConstraint", G2L["8d"]);
+G2L["8e"]["MaxTextSize"] = 40;
+
+-- StarterGui.ScreenGui.Credits frame.TextLabel.UIAspectRatioConstraint
+G2L["8f"] = Instance.new("UIAspectRatioConstraint", G2L["8d"]);
+
+
+-- StarterGui.ScreenGui.bring fluxus.LocalScript
+local function C_4()
+local script = G2L["4"];
+	-- LocalScript inside the TextButton
+	
+	-- Reference to the specific Frame you want to show (e.g., Frame2)
+	local specificFrame = script.Parent.Parent:WaitForChild("main fluxus ui")  -- Adjust the name to target the specific Frame
+	
+	-- Function to show the specific Frame
+	local function showSpecificFrame()
+		specificFrame.Visible = true  -- Shows only the specific Frame
+	end
+	
+	-- Connect button click to show the specific Frame
+	script.Parent.MouseButton1Click:Connect(showSpecificFrame)
+	
+end;
+task.spawn(C_4);
+-- StarterGui.ScreenGui.main fluxus ui.fluxus back.LocalScript
+local function C_7()
+local script = G2L["7"];
+	-- LocalScript inside the TextButton
+	
+	-- Reference to the parent Frame (which contains the button)
+	local frame = script.Parent.Parent  -- The parent of the button is the Frame
+	
+	-- Function to hide the Frame and button
+	local function hideFrame()
+		frame.Visible = false  -- Hides the entire Frame (including the button)
+	end
+	
+	-- Connect button click to hide the Frame
+	script.Parent.MouseButton1Click:Connect(hideFrame)
+	
+end;
+task.spawn(C_7);
+-- StarterGui.ScreenGui.main fluxus ui.Excutor button.LocalScript
+local function C_a()
+local script = G2L["a"];
+	-- LocalScript inside the TextButton (in Frame1)
+	
+	-- Reference to the specific Frame you want to show (Frame2 in this case)
+	local targetFrame = script.Parent.Parent.Parent:WaitForChild("excuter frame")  -- Adjust this to match the name of the Frame
+	
+	-- Function to show the target Frame
+	local function showTargetFrame()
+		targetFrame.Visible = true  -- Shows Frame2
+	end
+	
+	-- Connect button click to show the target Frame
+	script.Parent.MouseButton1Click:Connect(showTargetFrame)
+	
+end;
+task.spawn(C_a);
+-- StarterGui.ScreenGui.main fluxus ui.Excutor button.LocalScript
+local function C_b()
+local script = G2L["b"];
+	-- LocalScript inside the TextButton
+	
+	-- Reference to the parent Frame (which contains the button)
+	local frame = script.Parent.Parent  -- The parent of the button is the Frame
+	
+	-- Function to hide the Frame and button
+	local function hideFrame()
+		frame.Visible = false  -- Hides the entire Frame (including the button)
+	end
+	
+	-- Connect button click to hide the Frame
+	script.Parent.MouseButton1Click:Connect(hideFrame)
+	
+end;
+task.spawn(C_b);
+-- StarterGui.ScreenGui.main fluxus ui.Credits.LocalScript
+local function C_12()
+local script = G2L["12"];
+	-- LocalScript inside the TextButton
+	
+	-- Reference to the parent Frame (which contains the button)
+	local frame = script.Parent.Parent  -- The parent of the button is the Frame
+	
+	-- Function to hide the Frame and button
+	local function hideFrame()
+		frame.Visible = false  -- Hides the entire Frame (including the button)
+	end
+	
+	-- Connect button click to hide the Frame
+	script.Parent.MouseButton1Click:Connect(hideFrame)
+	
+end;
+task.spawn(C_12);
+-- StarterGui.ScreenGui.main fluxus ui.Credits.LocalScript
+local function C_13()
+local script = G2L["13"];
+	-- LocalScript inside the TextButton (in Frame1)
+	
+	-- Reference to the specific Frame you want to show (Frame2 in this case)
+	local targetFrame = script.Parent.Parent.Parent:WaitForChild("Credits frame")  -- Adjust this to match the name of the Frame
+	
+	-- Function to show the target Frame
+	local function showTargetFrame()
+		targetFrame.Visible = true  -- Shows Frame2
+	end
+	
+	-- Connect button click to show the target Frame
+	script.Parent.MouseButton1Click:Connect(showTargetFrame)
+	
+end;
+task.spawn(C_13);
+-- StarterGui.ScreenGui.main fluxus ui.console.LocalScript
+local function C_17()
+local script = G2L["17"];
+	-- LocalScript inside the TextButton
+	
+	-- Reference to the parent Frame (which contains the button)
+	local frame = script.Parent.Parent  -- The parent of the button is the Frame
+	
+	-- Function to hide the Frame and button
+	local function hideFrame()
+		frame.Visible = false  -- Hides the entire Frame (including the button)
+	end
+	
+	-- Connect button click to hide the Frame
+	script.Parent.MouseButton1Click:Connect(hideFrame)
+	
+	
+end;
+task.spawn(C_17);
+-- StarterGui.ScreenGui.main fluxus ui.console.LocalScript
+local function C_18()
+local script = G2L["18"];
+	-- LocalScript inside the TextButton (in Frame1)
+	
+	-- Reference to the specific Frame you want to show (Frame2 in this case)
+	local targetFrame = script.Parent.Parent.Parent:WaitForChild("Console frame")  -- Adjust this to match the name of the Frame
+	
+	-- Function to show the target Frame
+	local function showTargetFrame()
+		targetFrame.Visible = true  -- Shows Frame2
+	end
+	
+	-- Connect button click to show the target Frame
+	script.Parent.MouseButton1Click:Connect(showTargetFrame)
+end;
+task.spawn(C_18);
+-- StarterGui.ScreenGui.excuter frame.back button.LocalScript
+local function C_20()
+local script = G2L["20"];
+	-- LocalScript inside the TextButton
+	
+	-- Reference to the parent Frame (which contains the button)
+	local frame = script.Parent.Parent  -- The parent of the button is the Frame
+	
+	-- Function to hide the Frame and button
+	local function hideFrame()
+		frame.Visible = false  -- Hides the entire Frame (including the button)
+	end
+	
+	-- Connect button click to hide the Frame
+	script.Parent.MouseButton1Click:Connect(hideFrame)
+	
+end;
+task.spawn(C_20);
+-- StarterGui.ScreenGui.excuter frame.back button.LocalScript
+local function C_21()
+local script = G2L["21"];
+	-- LocalScript inside the TextButton (in Frame1)
+	
+	-- Reference to the specific Frame you want to show (Frame2 in this case)
+	local targetFrame = script.Parent.Parent.Parent:WaitForChild("main fluxus ui")  -- Adjust this to match the name of the Frame
+	
+	-- Function to show the target Frame
+	local function showTargetFrame()
+		targetFrame.Visible = true  -- Shows Frame2
+	end
+	
+	-- Connect button click to show the target Frame
+	script.Parent.MouseButton1Click:Connect(showTargetFrame)
+end;
+task.spawn(C_21);
+-- StarterGui.ScreenGui.excuter frame.exe button.LocalScript
+local function C_24()
+local script = G2L["24"];
 	local button = script.Parent
 	local textbox = button.Parent.TextBox
 	button.MouseButton1Click: Connect(function() 	
 		loadstring(textbox.Text)() 
 	end)
 	
-end
-coroutine.wrap(HIBWWM_fake_script)()
-local function PBMZWKB_fake_script() -- clear.clear script 
-	local script = Instance.new('LocalScript', clear)
-
+end;
+task.spawn(C_24);
+-- StarterGui.ScreenGui.excuter frame.Clear.LocalScript
+local function C_28()
+local script = G2L["28"];
 	local button = script.Parent
 	local textbox = button.Parent.TextBox
 	button.MouseButton1Click: Connect(function() 	
 		textbox.Text = ""
 	end)
 	
-end
-coroutine.wrap(PBMZWKB_fake_script)()
-local function BMDMM_fake_script() -- Main.LocalScript 
-	local script = Instance.new('LocalScript', Main)
-
-	script.Parent.Draggable = true
-	script.Parent.Active = true
+end;
+task.spawn(C_28);
+-- StarterGui.ScreenGui.Console frame.TextBox.LocalScript
+local function C_30()
+local script = G2L["30"];
+	local textBox = script.Parent:WaitForChild("TextBox")
 	
-end
-coroutine.wrap(BMDMM_fake_script)()
+	-- Print to check if TextBox is found
+	if textBox then
+		print("TextBox found!")
+	else
+		warn("TextBox not found!")
+	end
+	
+	local logHistory = ""  -- This will store the cumulative log history
+	
+	-- Function to update the TextBox with console output
+	local function updateConsoleOutput(message, messageType)
+		-- Print to verify message is being captured
+		print("Captured message: " .. message)
+	
+		logHistory = logHistory .. message .. "\n"  -- Append new message to logHistory
+		textBox.Text = logHistory  -- Set TextBox text to the updated log
+	end
+	
+	-- Connect output callback for normal output (prints)
+	game:GetService("LogService").MessageOut:Connect(updateConsoleOutput)
+	
+	-- Debug print to verify script has loaded
+	print("Log capturing script loaded.")
+	
+end;
+task.spawn(C_30);
+-- StarterGui.ScreenGui.Console frame.back button.LocalScript
+local function C_34()
+local script = G2L["34"];
+	-- LocalScript inside the TextButton
+	
+	-- Reference to the parent Frame (which contains the button)
+	local frame = script.Parent.Parent  -- The parent of the button is the Frame
+	
+	-- Function to hide the Frame and button
+	local function hideFrame()
+		frame.Visible = false  -- Hides the entire Frame (including the button)
+	end
+	
+	-- Connect button click to hide the Frame
+	script.Parent.MouseButton1Click:Connect(hideFrame)
+	
+end;
+task.spawn(C_34);
+-- StarterGui.ScreenGui.Console frame.back button.LocalScript
+local function C_35()
+local script = G2L["35"];
+	-- LocalScript inside the TextButton (in Frame1)
+	
+	-- Reference to the specific Frame you want to show (Frame2 in this case)
+	local targetFrame = script.Parent.Parent.Parent:WaitForChild("main fluxus ui")  -- Adjust this to match the name of the Frame
+	
+	-- Function to show the target Frame
+	local function showTargetFrame()
+		targetFrame.Visible = true  -- Shows Frame2
+	end
+	
+	-- Connect button click to show the target Frame
+	script.Parent.MouseButton1Click:Connect(showTargetFrame)
+end;
+task.spawn(C_35);
+-- StarterGui.ScreenGui.cloud frame.TextBox.LocalScript
+local function C_3c()
+local script = G2L["3c"];
+	local url = "https://scriptblox.com/api/script/search?filters=free&q="..script.Parent.Parent.TextBox.Text
+	local response = game:HttpGetAsync(url)
+	local decoded = game.HttpService:JSONDecode(response)
+	local scrollingFrame = script.Parent.Parent.ScrollingFrame  -- Reference to the ScrollingFrame
+	local buttonTemplate = script.Parent.Parent.ButtonTemplate  -- A template button to clone
+	
+	-- Clear previous buttons if any
+	for _, child in pairs(scrollingFrame:GetChildren()) do
+		if child:IsA("TextButton") then
+			child:Destroy()  -- Remove existing buttons
+		end
+	end
+	
+	-- Function to create and configure a button for each script
+	local function AddTab(imageUrl, title, scriptContent)
+		-- Clone the button template
+		local newButton = buttonTemplate:Clone()
+		newButton.Parent = scrollingFrame  -- Add it to the scrolling frame
+		newButton.Visible = true  -- Make the button visible (since the template might be hidden)
+	
+		-- Set the title and the image
+		newButton.Text = title
+	
+		-- Optional: Add an image if needed (assuming an ImageLabel is inside the button)
+		local imageLabel = newButton:FindFirstChild("ImageLabel")
+		if imageLabel then
+			imageLabel.Image = imageUrl
+		end
+	
+		-- Connect the button click event to show the script content or perform an action
+		newButton.MouseButton1Click:Connect(function()
+			print("Script content: ", scriptContent)
+			-- You can perform additional actions here, such as displaying the script content in another UI element
+		end)
+	end
+	
+	-- Loop through the search results and create buttons
+	for _, scriptInfo in pairs(decoded.result.scripts) do
+		if scriptInfo.isUniversal then
+			-- For universal scripts, use a specific image URL
+			AddTab("rbxassetid://13945092962", scriptInfo.title, scriptInfo.script)
+		else
+			-- For non-universal scripts, use the game's thumbnail image
+			AddTab("https://assetgame.roblox.com/Game/Tools/ThumbnailAsset.ashx?aid="..scriptInfo.game.gameId.."&fmt=png&wd=420&ht=420", scriptInfo.title, scriptInfo.script)
+		end
+	
+end;
+task.spawn(C_3c);
+-- StarterGui.ScreenGui.cloud frame.back button.LocalScript
+local function C_40()
+local script = G2L["40"];
+	-- LocalScript inside the TextButton
+	
+	-- Reference to the parent Frame (which contains the button)
+	local frame = script.Parent.Parent  -- The parent of the button is the Frame
+	
+	-- Function to hide the Frame and button
+	local function hideFrame()
+		frame.Visible = false  -- Hides the entire Frame (including the button)
+	end
+	
+	-- Connect button click to hide the Frame
+	script.Parent.MouseButton1Click:Connect(hideFrame)
+	
+end;
+task.spawn(C_40);
+-- StarterGui.ScreenGui.cloud frame.back button.LocalScript
+local function C_41()
+local script = G2L["41"];
+	-- LocalScript inside the TextButton (in Frame1)
+	
+	-- Reference to the specific Frame you want to show (Frame2 in this case)
+	local targetFrame = script.Parent.Parent.Parent:WaitForChild("main fluxus ui")  -- Adjust this to match the name of the Frame
+	
+	-- Function to show the target Frame
+	local function showTargetFrame()
+		targetFrame.Visible = true  -- Shows Frame2
+	end
+	
+	-- Connect button click to show the target Frame
+	script.Parent.MouseButton1Click:Connect(showTargetFrame)
+end;
+task.spawn(C_41);
+-- StarterGui.ScreenGui.Credits frame.back button.LocalScript
+local function C_6f()
+local script = G2L["6f"];
+	-- LocalScript inside the TextButton
+	
+	-- Reference to the parent Frame (which contains the button)
+	local frame = script.Parent.Parent  -- The parent of the button is the Frame
+	
+	-- Function to hide the Frame and button
+	local function hideFrame()
+		frame.Visible = false  -- Hides the entire Frame (including the button)
+	end
+	
+	-- Connect button click to hide the Frame
+	script.Parent.MouseButton1Click:Connect(hideFrame)
+	
+end;
+task.spawn(C_6f);
+-- StarterGui.ScreenGui.Credits frame.back button.LocalScript
+local function C_70()
+local script = G2L["70"];
+	-- LocalScript inside the TextButton (in Frame1)
+	
+	-- Reference to the specific Frame you want to show (Frame2 in this case)
+	local targetFrame = script.Parent.Parent.Parent:WaitForChild("main fluxus ui")  -- Adjust this to match the name of the Frame
+	
+	-- Function to show the target Frame
+	local function showTargetFrame()
+		targetFrame.Visible = true  -- Shows Frame2
+	end
+	
+	-- Connect button click to show the target Frame
+	script.Parent.MouseButton1Click:Connect(showTargetFrame)
+end;
+task.spawn(C_70);
+
+return G2L["1"], require;
